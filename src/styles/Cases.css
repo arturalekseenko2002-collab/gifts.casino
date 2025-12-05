@@ -161,7 +161,7 @@ body {
 
 .tonBalanceContainer h2 {
   color: white;
-  font-family: Inter_18pt-SemiBold;
+  font-family: 'Inter_18pt-SemiBold';
   font-size: 1.5vh;
 
 }
@@ -222,3 +222,10 @@ body {
   height: 50%;
   aspect-ratio: auto; 
 }
+
+@font-face {
+  font-family: 'Inter_18pt-SemiBold';
+  src: url('/assets/fonts/Inter_18pt-SemiBold.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+} 
