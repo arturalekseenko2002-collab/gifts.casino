@@ -199,3 +199,26 @@ body {
   height: 50%;
   aspect-ratio: auto; 
 }
+
+.keyBalanceContainer {
+  width: 15%;
+  height: 46%;
+  background-color: rgba(217, 217, 217, 0.05);
+  border-radius: 1vh;
+  overflow: hidden;
+
+  border: 0.45px white;
+  box-sizing: border-box; 
+  margin-top: .15vh;
+  margin-right: 2.8vw;
+
+  display: flex;
+  align-items: center;
+  justify-content: center !important;
+  gap: .5vh !important;
+}
+
+.keyBalanceContainer img {
+  height: 50%;
+  aspect-ratio: auto; 
+}
