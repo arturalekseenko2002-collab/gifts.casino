@@ -1,5 +1,5 @@
 import { Routes, Route } from "react-router-dom";
-import Home from "./pages/Main";
+import Cases from "./pages/Cases";
 import Withdraw from "./pages/Withdraw";
 
 const App = () => {
