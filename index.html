@@ -14,25 +14,28 @@
 
     <script type="module" src="/src/main.jsx"></script>
 
-    <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            if (window.Telegram?.WebApp) {
-                Telegram.WebApp.ready();
-                window.Telegram.WebApp.ready();
-                window.Telegram.WebApp.disableVerticalSwipes();
-                window.Telegram.WebApp.setHeaderColor("#000000");
-                window.Telegram.WebApp.expand();
-                window.Telegram.WebApp.fullscreen();
-                Telegram.WebApp.onEvent("viewportChanged", ({ isStateStable }) => {
-                    if (!isStateStable) {
-                    Telegram.WebApp.requestViewport({
-                        stableHeight: true
-                    });
-                    }
-                });
-            }
-        });
-    </script>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const tg = window.Telegram && window.Telegram.WebApp ? window.Telegram.WebApp : null;
+    console.log("TG WebApp object:", tg);
+
+    if (!tg) {
+      console.warn("Telegram WebApp not found — страница, скорее всего, открыта не из Telegram.");
+      return;
+    }
+
+    try {
+      tg.ready();          // говорим Telegram, что мини-апп загрузилось
+      tg.expand();         // просим максимум доступной высоты
+      tg.disableVerticalSwipes();
+      tg.setHeaderColor("#000000");
+      // БЕЗ fullscreen() и БЕЗ viewportChanged — убираем всё лишнее
+    } catch (e) {
+      console.error("Telegram WebApp init error:", e);
+    }
+  });
+</script>
+
 
 </body>
 </html>
