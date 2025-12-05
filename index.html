@@ -22,8 +22,6 @@
                 window.Telegram.WebApp.disableVerticalSwipes();
                 window.Telegram.WebApp.setHeaderColor("#000000");
                 window.Telegram.WebApp.expand();
-                Telegram.WebApp.isFullscreen();
-                Telegram.WebApp.isExpanded();
 
                 Telegram.WebApp.onEvent("viewportChanged", ({ isStateStable }) => {
                     if (!isStateStable) {
