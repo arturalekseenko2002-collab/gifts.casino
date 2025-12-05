@@ -16,21 +16,20 @@
 
     <script>
         document.addEventListener("DOMContentLoaded", function() {
-            if (window.Telegram?.WebApp) {
-                Telegram.WebApp.ready();
-                window.Telegram.WebApp.ready();
-                window.Telegram.WebApp.disableVerticalSwipes();
-                window.Telegram.WebApp.setHeaderColor("#000000");
-                window.Telegram.WebApp.expand();
+            const tg = window.Telegram?.WebApp;
+            if (!tg) return;
 
-                Telegram.WebApp.onEvent("viewportChanged", ({ isStateStable }) => {
-                    if (!isStateStable) {
-                    Telegram.WebApp.requestViewport({
-                        stableHeight: true
-                    });
-                    }
-                });
-            }
+            tg.ready();                                // 1. сигнал Telegram что WebApp загружен
+            tg.expand();                               // 2. разворачиваем на весь экран
+            tg.disableVerticalSwipes();                // 3. блокируем свайпы
+            tg.setHeaderColor("#000000");              // 4. делаем тёмный header (можно убрать)
+
+            // фикс самого телеграма на некоторых телефонах
+            tg.onEvent("viewportChanged", ({ isStateStable }) => {
+                if (!isStateStable) {
+                    tg.requestViewport({ stableHeight: true });
+                }
+            });
         });
     </script>
 
