@@ -1,47 +1,57 @@
 /* ✅ Глобальные настройки */
 * {
-    user-select: none;
-    -webkit-tap-highlight-color: transparent;
-  }
-  
-body {
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* ВАЖНО: не фиксируем body, а даём ему просто занимать весь экран */
+html,
+body,
+#root {
   margin: 0;
+  padding: 0;
   width: 100%;
-  height: 100vh;
-  position: fixed;
-  overflow: hidden; 
+  height: 100%;
+  overflow: hidden;
+}
+
+body {
   isolation: isolate;
 }
 
+/* Основной контейнер приложения */
 .App {
   margin: 0;
   width: 100%;
-  height: 100vh;
-  position: fixed;
+  min-height: 100dvh;      /* было height: 100vh + position: fixed */
+  position: relative;      /* вместо fixed */
   display: flex;
   text-align: center;
   flex-direction: column;
 
   background:
-    radial-gradient(200% 150% at 0% 60%,rgba(85,61,158,.8),transparent 30%),
-    radial-gradient(100% 180% at 80% 80%,#000,#000);
+    radial-gradient(200% 150% at 0% 60%, rgba(85, 61, 158, .8), transparent 30%),
+    radial-gradient(100% 180% at 80% 80%, #000, #000);
   background-color: #000;
   background-blend-mode: screen;
   min-height: 0;
 
   color: white;
   font-family: Muller;
-  font-size: 2.2vh ;
+  font-size: 2.2vh;
 }
 
-.App p{
+.App p {
   margin: 0;
 }
 
-.Main_Window{
+/* Главное окно */
+.Main_Window {
   width: 100%;
-  height: 95%;
-  position: fixed;
+  height: 100%;         /* было 95% + fixed */
+  position: absolute;   /* растягиваем внутри .App */
+  inset: 0;             /* top:0; right:0; bottom:0; left:0 */
+  display: flex;
   flex-direction: column;
   bottom: 0;
   color: white;
@@ -49,6 +59,7 @@ body {
   animation: fade-in 0.3s forwards;
 }
 
+/* Контейнер контента */
 .mainHomePageContainer {
   height: 100%;
   width: 100%;
@@ -57,87 +68,78 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-
-  /* 🔥 Вместо обычного чёрного — добавляем “Diamond” эффект */
-  /* background:
-    radial-gradient(200% 150% at 0% 60%,rgba(85,61,158,.8),transparent 30%),
-    radial-gradient(100% 180% at 80% 80%,#000,#000);
-  background-color: #000;
-  background-blend-mode: screen;
-  min-height: 0; */
 }
 
+/* Дальше можно оставить как есть */
 .headerContainer {
-  position: relative;    
-  height: 8.37vh;             
+  position: relative;
+  height: 8.37vh;
   width: 100%;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  align-items: center;    
-  flex: 0 0 8.37vh;           
+  align-items: center;
+  flex: 0 0 8.37vh;
 }
 
 .circleInHeaderContainer {
-  position: static;       
-  height: 80%;       
-  width: auto;               
-  margin-left: 3.5vw;                  
+  position: static;
+  height: 80%;
+  width: auto;
+  margin-left: 3.5vw;
 }
 
 .circleName {
-
-  height: 100%;       
-  aspect-ratio: 1/1;         
-  background-color: #5736BB; 
-  border-radius: 20%;  
+  height: 100%;
+  aspect-ratio: 1/1;
+  background-color: #5736BB;
+  border-radius: 20%;
 
   color: white;
-  display: flex; 
+  display: flex;
   align-items: center;
   justify-content: center;
-  font-family: 'Inter', sans-serif;  
-  font-weight: 400;                 
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
   font-size: 1.6vh;
 }
 
 .userAvatar {
-  height: 100%;    
+  height: 100%;
   aspect-ratio: 1/1;
-  border-radius: 50%; 
+  border-radius: 50%;
 }
 
 .nickNameContainer {
-    position: static;     
-    margin: 0;                  
-    height: 55%;
-    width: 16%;
-    margin-left: 2vw;
-    margin-right: 3vw;
-    display: flex;
-    align-content: stretch;
-    /* gap: 0.1vh; */
-    flex-wrap: wrap;
+  position: static;
+  margin: 0;
+  height: 55%;
+  width: 16%;
+  margin-left: 2vw;
+  margin-right: 3vw;
+  display: flex;
+  align-content: stretch;
+  flex-wrap: wrap;
 }
 
 .nickNameContainerPart1 {
-    width: 100%;
-    height: 60%;
+  width: 100%;
+  height: 60%;
 
-    color: white;
-    font-family: 'Inter', sans-serif;
-    font-weight: 400;  
-    font-size: 1.94vh;
-    text-align: start;
+  color: white;
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-size: 1.94vh;
+  text-align: start;
 }
 
 .nickNameContainerPart2 {
-    width: 100%;
-    height: 40%;
+  width: 100%;
+  height: 40%;
 
-    color: white;
-    font-family: 'Inter', sans-serif;
-    font-weight: 400;  
-    font-size: 1.47vh;
-    text-align: start;
+  color: white;
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-size: 1.47vh;
+  text-align: start;
 }
