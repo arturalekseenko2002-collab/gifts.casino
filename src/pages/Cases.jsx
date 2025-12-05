@@ -2,9 +2,9 @@ import React from "react";
 import "../styles/Cases.css";
 import { useUser } from "../UserContext";
 
-import deposit from "../assets/deposit.svg";
-import key from "../assets/key.svg";
-import ton from "../assets/ton.svg";
+import deposit from "../assets/deposit.png";
+import key from "../assets/key.png";
+import ton from "../assets/ton.png";
 
 const Cases = () => {
   const { user, userLoading, initials, displayName, displayUsername } = useUser();
