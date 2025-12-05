@@ -225,7 +225,7 @@ body {
 
 @font-face {
   font-family: 'Inter_18pt-SemiBold';
-  src: url('/assets/fonts/Inter_18pt-SemiBold.ttf') format('truetype');
+  src: url('/public/fonts/Inter_18pt-SemiBold.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
 } 
