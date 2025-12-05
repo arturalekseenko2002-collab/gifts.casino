@@ -2,6 +2,10 @@ import React from "react";
 import "../styles/Cases.css";
 import { useUser } from "../UserContext";
 
+import deposit from "../assets/deposit.svg";
+import key from "../assets/key.svg";
+import ton from "../assets/ton.svg";
+
 const Cases = () => {
   const { user, userLoading, initials, displayName, displayUsername } = useUser();
 
@@ -25,6 +29,14 @@ const Cases = () => {
               </div>
               <div className="nickNameContainerPart2">
                 {userLoading ? "" : displayUsername}
+              </div>
+              <div className="tonBalanceContainer">
+                <img src={ton}/>
+                <h2>192.32</h2> 
+              </div>
+              <div className="keyBalanceContainer">
+                <img src={key}/>
+                <h2>4</h2> 
               </div>
             </div>
           </div>
