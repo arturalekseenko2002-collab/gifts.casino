@@ -1,25 +1,17 @@
 /* ✅ Глобальные настройки */
-/* Глобальные настройки */
 * {
-  user-select: none;
-  -webkit-tap-highlight-color: transparent;
-}
-
-/* Самое важное: никаких fixed и 100vh здесь */
-html,
-body,
-#root {
-  margin: 0;
-  padding: 0;
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-}
-
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+  }
+  
 body {
+  margin: 0;
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  overflow: hidden; 
   isolation: isolate;
 }
-
 
 .App {
   margin: 0;
