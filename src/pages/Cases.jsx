@@ -1,13 +1,9 @@
 import React from "react";
 import "../styles/Cases.css";
+import { useUser } from "../UserContext";
 
 const Cases = () => {
-  // ВРЕМЕННЫЕ заглушки, пока нет контекста и бэка
-  const user = null;
-  const userLoading = false;
-  const initials = "";
-  const displayName = "";
-  const displayUsername = "";
+  const { user, userLoading, initials, displayName, displayUsername } = useUser();
 
   return (
     <div className="App">

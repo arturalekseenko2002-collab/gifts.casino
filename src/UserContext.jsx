@@ -1,99 +1,75 @@
-import React, { createContext, useContext, useEffect, useState, useRef } from "react";
+// src/UserContext.jsx
+import React, {
+  createContext,
+  useContext,
+  useEffect,
+  useMemo,
+  useState,
+} from "react";
 
 const UserContext = createContext(null);
-export const useUser = () => useContext(UserContext);
-
-const API_BASE = import.meta.env.VITE_API_BASE || "http://localhost:4000";
 
 export const UserProvider = ({ children }) => {
-  const [user, setUser] = useState(null); // { telegramId, username, firstName, lastName, photoUrl }
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
-  const tgIdRef = useRef(null);
-
-  const refetchUser = async () => {
-    if (!tgIdRef.current) return;
-    const r = await fetch(`${API_BASE}/get-user?telegramId=${tgIdRef.current}&t=${Date.now()}`, {
-      cache: "no-store",
-    });
-    const data = await r.json();
-    if (data?.ok) setUser(data.user);
-  };
-
-  const updateUser = (patch) => {
-    setUser(prev => {
-      const next = { ...(prev || {}), ...(patch || {}) };
-      // аккуратно объединяем tasks
-      if (prev?.tasks || patch?.tasks) {
-        next.tasks = { ...(prev?.tasks || {}), ...(patch?.tasks || {}) };
-      }
-      return next;
-    });
-  };
-
+  const [user, setUser] = useState(null);
+  const [userLoading, setUserLoading] = useState(true);
 
   useEffect(() => {
-    (async () => {
-      try {
-        const tg = window?.Telegram?.WebApp;
-        const u  = tg?.initDataUnsafe?.user;   
-        
-        const startParam = tg?.initDataUnsafe?.start_param || "";
-        let ref = null;
-        if (typeof startParam === "string" && startParam.startsWith("ref_")) {
-          ref = startParam.slice(4);
+    const tg = window.Telegram?.WebApp;
+    const tgUser = tg?.initDataUnsafe?.user;
+
+    // если мини-апп открыт не из телеги
+    if (!tgUser) {
+      setUserLoading(false);
+      return;
+    }
+
+    const body = {
+      telegramId: tgUser.id,
+      username: tgUser.username,
+      firstName: tgUser.first_name,
+      lastName: tgUser.last_name,
+      photoUrl: tgUser.photo_url, // <-- важно!
+      ref: tg?.initDataUnsafe?.start_param || null,
+    };
+
+    // URL бэка, можешь вынести в .env как VITE_API_URL
+    fetch(import.meta.env.VITE_API_URL + "/register-user", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(body),
+    })
+      .then((r) => r.json())
+      .then((data) => {
+        if (data?.ok) {
+          setUser(data.user);
+        } else {
+          console.error("register-user failed", data);
         }
-       
-        try {
-          const url = new URL(window.location.href);
-          if (!ref) {
-            const qref = url.searchParams.get("ref");
-            if (qref) ref = qref;
-          }
-          if (!ref) {
-            const startapp = url.searchParams.get("startapp");
-            if (startapp && startapp.startsWith("ref_")) ref = startapp.slice(4);
-          }
-        } catch {}
-
-        const payload = {
-          telegramId: u?.id?.toString(),
-          username:   u?.username || null,
-          firstName:  u?.first_name || null,
-          lastName:   u?.last_name || null,
-          photoUrl:   u?.photo_url || null,
-          ref:        ref || null,
-        };
-
-        if (!payload.telegramId) {
-          setLoading(false);
-          setError("Нет Telegram.WebApp.user (запусти из Telegram)");
-          return;
-        }
-        
-        tgIdRef.current = payload.telegramId;
-
-
-        const r = await fetch(`${API_BASE}/register-user`, {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify(payload)
-        });
-        const data = await r.json();
-        if (!r.ok || !data?.ok) throw new Error(data?.error || "Auth failed");
-
-        setUser(data.user);
-        setLoading(false);
-      } catch (e) {
-        setError(e.message);
-        setLoading(false);
-      }
-    })();
+      })
+      .catch((e) => console.error("register-user error", e))
+      .finally(() => setUserLoading(false));
   }, []);
 
+  const initials = useMemo(() => {
+    if (!user) return "";
+    const f = user.firstName?.[0] || "";
+    const l = user.lastName?.[0] || "";
+    const fromName = (f + l).trim();
+    if (fromName) return fromName.toUpperCase();
+    if (user.username) return user.username[0].toUpperCase();
+    return "";
+  }, [user]);
+
+  const displayName = user?.firstName || user?.username || "Гость";
+  const displayUsername = user?.username ? "@" + user.username : "";
+
   return (
-    <UserContext.Provider value={{ user, loading, refetchUser, updateUser }}>
+    <UserContext.Provider
+      value={{ user, userLoading, initials, displayName, displayUsername }}
+    >
       {children}
     </UserContext.Provider>
   );
 };
+
+export const useUser = () => useContext(UserContext);
