@@ -172,7 +172,7 @@ body {
 }
 
 .keyBalanceContainer {
-  width: 15%;
+  width: 13%;
   height: 46%;
   background-color: rgba(217, 217, 217, 0.15);
   border-radius: 1vh;
@@ -200,8 +200,8 @@ body {
   aspect-ratio: auto; 
 }
 
-.keyBalanceContainer {
-  width: 15%;
+.depositBalanceContainer {
+  width: 13%;
   height: 46%;
   background-color: rgba(217, 217, 217, 0.05);
   border-radius: 1vh;
@@ -218,7 +218,7 @@ body {
   gap: .5vh !important;
 }
 
-.keyBalanceContainer img {
+.depositBalanceContainer img {
   height: 50%;
   aspect-ratio: auto; 
 }

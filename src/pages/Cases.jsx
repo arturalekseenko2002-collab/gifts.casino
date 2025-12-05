@@ -30,15 +30,20 @@ const Cases = () => {
               <div className="nickNameContainerPart2">
                 {userLoading ? "" : displayUsername}
               </div>
-              <div className="tonBalanceContainer">
-                <img src={ton}/>
-                <h2>192.32</h2> 
-              </div>
-              <div className="keyBalanceContainer">
-                <img src={key}/>
-                <h2>4</h2> 
-              </div>
             </div>
+
+            <div className="depositBalanceContainer">
+              <img src={deposit}/>
+            </div>
+            <div className="tonBalanceContainer">
+              <img src={ton}/>
+              <h2>192.32</h2> 
+            </div>
+            <div className="keyBalanceContainer">
+              <img src={key}/>
+              <h2>4</h2> 
+            </div>
+
           </div>
         </div>
       </div>
