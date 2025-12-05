@@ -14,36 +14,25 @@
 
     <script type="module" src="/src/main.jsx"></script>
 
-<script>
-  document.addEventListener("DOMContentLoaded", function() {
-    const tg = window.Telegram?.WebApp;
-    if (!tg) {
-      console.warn("Telegram WebApp object not found");
-      return;
-    }
-
-    try {
-      tg.ready();             // сигнал Telegram, что WebApp готов
-      tg.expand();            // разворачиваем максимально
-      tg.disableVerticalSwipes();
-      tg.setHeaderColor("#000000");
-
-      // безопасный обработчик viewportChanged
-      tg.onEvent("viewportChanged", (event) => {
-        // event может быть undefined, поэтому просто проверяем
-        if (event && event.isStateStable === false) {
-          try {
-            tg.requestViewport({ stableHeight: true });
-          } catch (e) {
-            console.warn("requestViewport error", e);
-          }
-        }
-      });
-    } catch (e) {
-      console.error("Telegram WebApp init error:", e);
-    }
-  });
-</script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            if (window.Telegram?.WebApp) {
+                Telegram.WebApp.ready();
+                window.Telegram.WebApp.ready();
+                window.Telegram.WebApp.disableVerticalSwipes();
+                window.Telegram.WebApp.setHeaderColor("#000000");
+                window.Telegram.WebApp.expand();
+                window.Telegram.WebApp.fullscreen();
+                Telegram.WebApp.onEvent("viewportChanged", ({ isStateStable }) => {
+                    if (!isStateStable) {
+                    Telegram.WebApp.requestViewport({
+                        stableHeight: true
+                    });
+                    }
+                });
+            }
+        });
+    </script>
 
 </body>
 </html>
