@@ -240,9 +240,29 @@ body {
   aspect-ratio: auto; 
 }
 
+.titleAnimationContainer {
+  width: 90%;
+  height: 10%;
+  display: flex;
+  justify-content: center;
+}
+
+.titleAnimationContainer h2 {
+  color: #FFFFFF;
+  font-family: 'Inter_18pt-Bold';
+  font-size: 2vh;
+}
+
 @font-face {
   font-family: 'Inter_18pt-SemiBold';
   src: url('/public/fonts/Inter_18pt-SemiBold.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+} 
+
+@font-face {
+  font-family: 'Inter_18pt-Bold';
+  src: url('/public/fonts/Inter_18pt-Bold.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
 } 

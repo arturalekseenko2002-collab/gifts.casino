@@ -1,6 +1,7 @@
 import React from "react";
 import "../styles/Cases.css";
 import { useUser } from "../UserContext";
+import { TitleAnimation } from "./TitleAnimation";
 
 import deposit from "../assets/deposit.png";
 import key from "../assets/key.png";
@@ -14,7 +15,7 @@ const Cases = () => {
       <div className="Main_Window">
         <div className="mainHomePageContainer">
           <div className="headerContainer">
-            
+
             <div className="CircleAndNickNameContainer">
               <div className="circleInHeaderContainer">
                 {user?.photoUrl ? (
@@ -50,6 +51,12 @@ const Cases = () => {
             </div>
 
           </div>
+
+          <div className="titleAnimationContainer">
+            <TitleAnimation />
+            <h2>БЕСПЛАТНЫЕ КЕЙСЫ</h2>
+          </div>
+
         </div>
       </div>
     </div>
