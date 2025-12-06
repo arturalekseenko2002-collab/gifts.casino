@@ -14,14 +14,16 @@ const Cases = () => {
       <div className="Main_Window">
         <div className="mainHomePageContainer">
           <div className="headerContainer">
-            <div className="circleInHeaderContainer">
-              {user?.photoUrl ? (
-                <img src={user.photoUrl} className="userAvatar" />
-              ) : (
-                <div className="circleName">
-                  {userLoading ? "" : initials}
-                </div>
-              )}
+            <div className="CircleAndnickNameContainer">
+              <div className="circleInHeaderContainer">
+                {user?.photoUrl ? (
+                  <img src={user.photoUrl} className="userAvatar" />
+                ) : (
+                  <div className="circleName">
+                    {userLoading ? "" : initials}
+                  </div>
+                )}
+              </div>
             </div>
             <div className="nickNameContainer">
               <div className="nickNameContainerPart1">

@@ -85,6 +85,16 @@ body {
   margin-left: 3.5vw;                  
 }
 
+.CircleAndnickNameContainer {
+  position: static;       
+  height: 100%;       
+  width: auto;                              
+  display: flex;
+  flex-direction: row;
+  align-items: center;  
+  gap: 2vw;
+}
+
 .circleName {
 
   height: 100%;       
@@ -112,8 +122,8 @@ body {
   margin: 0;                  
   height: 55%;
   width: 16%;
-  margin-left: 2vw;
-  margin-right: 3vw;
+  /* margin-left: 2vw;
+  margin-right: 3vw; */
   display: flex;
   align-content: stretch;
   /* gap: 0.1vh; */
