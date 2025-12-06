@@ -242,12 +242,13 @@ body {
 
 .titleAnimationContainer {
   width: 90%;
-  height: 10%;
+  height: 5%;
   display: flex;
   justify-content: center;
 }
 
 .titleAnimationContainer h2 {
+  position: absolute;
   color: #FFFFFF;
   font-family: 'Inter_18pt-Bold';
   font-size: 2vh;
