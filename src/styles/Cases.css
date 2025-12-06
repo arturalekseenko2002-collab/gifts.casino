@@ -136,7 +136,7 @@ body {
   height: 40%;
 
   color: white;
-  font-family: 'Inter_18pt-SemiBold';
+  font-family: 'Inter', sans-serif;
   font-weight: 400;  
   font-size: 1.47vh;
   text-align: start;
@@ -190,7 +190,7 @@ body {
 
 .keyBalanceContainer h2 {
   color: white;
-  font-family: 'Inter Semi Bold';
+  font-family: 'Inter_18pt-SemiBold';
   font-size: 1.5vh;
 
 }
