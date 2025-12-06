@@ -85,7 +85,7 @@ body {
   margin-left: 3.5vw;                  
 }
 
-.CircleAndnickNameContainer {
+.CircleAndNickNameContainer {
   position: static;       
   height: 100%;       
   width: auto;                              
@@ -150,6 +150,16 @@ body {
   font-weight: 400;  
   font-size: 1.47vh;
   text-align: start;
+}
+
+.deposit-ton-key-Container {
+  position: static;       
+  height: 100%;       
+  width: auto;                              
+  display: flex;
+  flex-direction: row;
+  align-items: center;  
+  gap: 2vw;
 }
 
 .tonBalanceContainer {
