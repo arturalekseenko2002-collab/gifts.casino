@@ -24,13 +24,13 @@ const Cases = () => {
                   </div>
                 )}
               </div>
-            </div>
-            <div className="nickNameContainer">
-              <div className="nickNameContainerPart1">
-                {userLoading ? "Загрузка" : displayName}
-              </div>
-              <div className="nickNameContainerPart2">
-                {userLoading ? "" : displayUsername}
+              <div className="nickNameContainer">
+                <div className="nickNameContainerPart1">
+                  {userLoading ? "Загрузка" : displayName}
+                </div>
+                <div className="nickNameContainerPart2">
+                  {userLoading ? "" : displayUsername}
+                </div>
               </div>
             </div>
 
