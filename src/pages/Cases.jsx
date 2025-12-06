@@ -1,7 +1,7 @@
 import React from "react";
 import "../styles/Cases.css";
 import { useUser } from "../UserContext";
-import { TitleAnimation } from "./TitleAnimation";
+import { TitleAnimation } from "../components/TitleAnimation";
 
 import deposit from "../assets/deposit.png";
 import key from "../assets/key.png";
