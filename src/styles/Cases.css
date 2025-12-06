@@ -163,7 +163,7 @@ body {
 }
 
 .tonBalanceContainer {
-  width: 23%;
+  width: 45%;
   height: 46%;
   background-color: rgba(217, 217, 217, 0.15);
   border-radius: 1vh;
@@ -191,7 +191,7 @@ body {
 }
 
 .keyBalanceContainer {
-  width: 13%;
+  width: 22%;
   height: 46%;
   background-color: rgba(217, 217, 217, 0.15);
   border-radius: 1vh;
@@ -219,7 +219,7 @@ body {
 }
 
 .depositBalanceContainer {
-  width: 13%;
+  width: 22%;
   height: 46%;
   background-color: rgba(217, 217, 217, 0.05);
   border-radius: 1vh;
