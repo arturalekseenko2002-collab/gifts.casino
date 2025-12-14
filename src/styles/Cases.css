@@ -537,7 +537,7 @@ body {
   }
 
   .footerItem.active .footerActiveAnim {
-    bottom: -18px;
+    bottom: -10px;
     height: 50px;
   }
 }
