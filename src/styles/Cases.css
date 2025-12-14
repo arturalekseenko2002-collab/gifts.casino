@@ -552,6 +552,11 @@ body {
     padding: 15px 18px;
     margin-bottom: 1vh!important;
   }
+
+  .footerItem.active .footerActiveAnim {
+    bottom: -18px;
+    height: 50px;
+  }
 }
 
 @media (min-width: 1200px) {
@@ -569,6 +574,11 @@ body {
     /* На больших экранах: фикс ширина треков, пустые колонки схлопываются */
     grid-template-columns: repeat(auto-fit, 220px);
     justify-content: center;
+  }
+
+  .footerItem.active .footerActiveAnim {
+    bottom: -18px;
+    height: 50px;
   }
 }
 
