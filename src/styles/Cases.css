@@ -52,19 +52,15 @@ body {
 .mainHomePageContainer {
   height: 100%;
   width: 100%;
-  overflow-y: auto;
 
   display: flex;
   flex-direction: column;
   align-items: center;
 
-  /* 🔥 Вместо обычного чёрного — добавляем “Diamond” эффект */
-  /* background:
-    radial-gradient(200% 150% at 0% 60%,rgba(85,61,158,.8),transparent 30%),
-    radial-gradient(100% 180% at 80% 80%,#000,#000);
-  background-color: #000;
-  background-blend-mode: screen;
-  min-height: 0; */
+  /* 🔹 КЛЮЧЕВОЕ */
+  max-width: 1200px;
+  margin: 0 auto;
+  box-sizing: border-box;
 }
 
 .headerContainer {
@@ -341,6 +337,18 @@ body {
 @media (max-width: 480px) {
   .casesGrid {
     grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 900px) {
+  .mainHomePageContainer {
+    padding: 0 28px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .mainHomePageContainer {
+    padding: 0 40px;
   }
 }
 
