@@ -416,7 +416,7 @@ body {
 
   .headerContainer {
     flex-wrap: nowrap;
-    padding: 30px 18px;
+    padding: 15px 18px;
   }
 }
 
@@ -427,7 +427,7 @@ body {
 
   .headerContainer {
     flex-wrap: nowrap;
-    padding: 30px 18px;
+    padding: 15px 18px;
   }
 
   .casesGrid {
