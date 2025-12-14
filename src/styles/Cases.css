@@ -359,7 +359,7 @@ body {
   /* ❗️СТРОГО ОДНА СТРОКА */
   .headerContainer {
     flex-wrap: nowrap;
-    padding: calc(env(safe-area-inset-top) + 8px) 12px 6px;
+    padding: 30px 18px;
   }
 
   .circleInHeaderContainer {
@@ -411,13 +411,23 @@ body {
 
 @media (min-width: 900px) {
   .mainHomePageContainer {
-    padding: 0 28px;
+    padding: 0px;
+  }
+
+  .headerContainer {
+    flex-wrap: nowrap;
+    padding: 30px 18px;
   }
 }
 
 @media (min-width: 1200px) {
   .mainHomePageContainer {
-    padding: 0 40px;
+    padding: 0px;
+  }
+
+  .headerContainer {
+    flex-wrap: nowrap;
+    padding: 30px 18px;
   }
 
   .casesGrid {
