@@ -64,7 +64,7 @@ body {
   box-sizing: border-box;
 
   overflow-y: auto;
-  padding-top: 8px;
+  /* padding-top: 8px; */
 }
 
 /* ================= HEADER (адаптивный) ================= */
