@@ -265,7 +265,7 @@ body {
   gap: 10px;
 
   /* Самое главное: адаптивная сетка */
-  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
 }
 
 .casesGridItem {
