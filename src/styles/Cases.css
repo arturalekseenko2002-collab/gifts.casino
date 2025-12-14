@@ -498,6 +498,7 @@ body {
   .footerContainer {
     flex-wrap: nowrap;
     padding: 15px 18px;
+    justify-content: center;
   }
 }
 
