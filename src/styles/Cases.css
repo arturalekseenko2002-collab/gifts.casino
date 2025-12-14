@@ -325,12 +325,15 @@ body {
   border-radius: 12px;
   border: 0;
 
-  font-family: 'Inter', sans-serif;
-  font-weight: 400;
-  font-size: 12px;
+  font-family: Inter_18pt-Regular;
+  font-size: 14px;
 
   background: rgba(255, 255, 255, 0.08);
   color: rgba(255, 255, 255, 0.85);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 /* Мобилка: строго 2 колонки */
