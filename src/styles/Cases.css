@@ -231,7 +231,7 @@ body {
   border-radius: 1vh;
   overflow: hidden;
 
-  border: 0.45px solid #ffffff;
+  border: 0.65px solid #ffffff;
   box-sizing: border-box;
   margin-top: 0.15vh;
 
@@ -242,7 +242,7 @@ body {
 }
 
 .depositBalanceContainer img {
-  height: 50%;
+  height: 40%;
   aspect-ratio: auto;
 }
 
