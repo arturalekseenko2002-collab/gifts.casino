@@ -70,17 +70,14 @@ body {
 .headerContainer {
   position: relative;
   width: 100%;
-
-  /* вместо жесткого vh — адаптивная высота */
-  min-height: 72px;
-  height: auto;
+  min-height: 44px;
 
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
 
-  padding: 12px 20px;
+  padding: 8px 0;
   box-sizing: border-box;
 }
 
@@ -108,7 +105,7 @@ body {
   height: 100%;
   aspect-ratio: 1/1;
   background-color: #5736bb;
-  border-radius: 20%;
+  border-radius: 50%;
 
   color: white;
   display: flex;
@@ -122,7 +119,7 @@ body {
 .userAvatar {
   height: 100%;
   aspect-ratio: 1/1;
-  border-radius: 20%;
+  border-radius: 50%;
 }
 
 .nickNameContainer {
@@ -164,16 +161,11 @@ body {
 }
 
 .deposit-ton-key-Container {
-  height: 100%;
-  width: auto;
   display: flex;
   flex-direction: row;
   align-items: center;
-
-  flex: 0 0 auto;
-  gap: 12px;
-
-  margin-right: 0;
+  gap: 8px;
+  flex-shrink: 0;
 }
 
 .tonBalanceContainer {
@@ -350,45 +342,61 @@ body {
   justify-content: center;
 }
 
-/* Мобилка: строго 2 колонки */
 @media (max-width: 480px) {
   .casesGrid {
     grid-template-columns: repeat(2, 1fr);
   }
 
+  /* ❗️СТРОГО ОДНА СТРОКА */
   .headerContainer {
-    padding: 10px 0;
-    min-height: 64px;
+    flex-wrap: nowrap;
+    padding: 6px 0;
   }
 
-  .deposit-ton-key-Container {
-    gap: 8px;
+  .circleInHeaderContainer {
+    height: 32px;
   }
 
-  .tonBalanceContainer,
-  .keyBalanceContainer,
   .depositBalanceContainer {
-    height: 36px;
+    width: 35px;
+    height: 27px;
+    border-radius: 6px;
   }
 
   .tonBalanceContainer {
-    width: clamp(110px, 34vw, 140px);
+    width: 80px;
+    height: 27px;
+    border-radius: 6px;
+    gap: 6px !important;
   }
 
   .keyBalanceContainer {
-    width: clamp(62px, 20vw, 80px);
+    width: 43px;
+    height: 27px;
+    border-radius: 6px;
+    gap: 6px !important;
   }
 
-  .depositBalanceContainer {
-    width: 46px;
+  .tonBalanceContainer h2,
+  .keyBalanceContainer h2 {
+    font-size: 12px;
+    line-height: 1;
+  }
+
+  .tonBalanceContainer img,
+  .keyBalanceContainer img,
+  .depositBalanceContainer img {
+    height: 60%;
   }
 
   .nickNameContainerPart1 {
-    font-size: 14px;
+    font-size: 13px;
+    max-width: 120px;
   }
 
   .nickNameContainerPart2 {
-    font-size: 12px;
+    font-size: 11px;
+    max-width: 120px;
   }
 }
 
