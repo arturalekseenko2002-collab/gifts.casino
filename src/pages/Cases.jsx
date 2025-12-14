@@ -16,7 +16,6 @@ const Cases = () => {
     { id: 2, title: "UFC" },
     { id: 3, title: "UFC" },
     { id: 4, title: "UFC" },
-    { id: 5, title: "UFC" },
   ];
 
   return (
