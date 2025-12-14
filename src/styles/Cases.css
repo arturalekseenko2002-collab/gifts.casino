@@ -351,6 +351,9 @@ body {
   .mainHomePageContainer {
     padding: 0 40px;
   }
+  .casesGrid {
+    grid-template-columns: repeat(5, 1fr);
+  }
 }
 
 @font-face {
