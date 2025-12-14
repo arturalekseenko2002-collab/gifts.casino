@@ -391,6 +391,8 @@ body {
 
 .footerInner{
   width: 100%;
+  background: #0C0B15;
+  border-radius: 15px 15px 0px 0px ;
   max-width: 1300px;   /* как у mainHomePageContainer */
   padding: 15px 18px;  /* твои паддинги */
   box-sizing: border-box;
