@@ -83,6 +83,11 @@ const Cases = () => {
             ))}
           </div>
 
+          <div className="titleAnimationContainer">
+            <TitleAnimation />
+            <h2>ЛИМИТИРОВаННЫЕ КЕЙСЫ</h2>
+          </div>
+
         </div>
       </div>
     </div>
