@@ -68,7 +68,17 @@ const Cases = () => {
           <div className="casesGrid">
             {items.map((item) => (
               <div key={item.id} className="casesGridItem">
-                {/* Тут будет твоя карточка */}
+                  <div className="caseCard">
+                    <div className="caseCardImage">caseCardTitle
+                      <img src={user.photoUrl} />
+                    </div>
+                    <div className="caseCardTitle">
+                      <h2>UFC</h2>
+                    </div>
+                    <div className="caseCardButton">
+                      <h2>открыть за подписку</h2>
+                    </div>
+                  </div>
                 <div>Case: {item.title}</div>
               </div>
             ))}

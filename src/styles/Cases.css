@@ -258,14 +258,79 @@ body {
 
 .casesGrid {
   width: 100%;
-  padding: 16px;
+  padding: 10px;
   box-sizing: border-box;
 
   display: grid;
-  gap: 14px;
+  gap: 10px;
 
   /* Самое главное: адаптивная сетка */
   grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+}
+
+.casesGridItem {
+  /* чтобы карточка занимала всю ширину ячейки grid */
+  width: 100%;
+}
+
+/* ===== Case Card (по параметрам из макета: 173x183, radius 20, fill #B2AEAE 10%) ===== */
+.caseCard {
+  width: 100%;
+
+  /* ВАЖНО: сохраняем пропорцию как в макете (W173 / H183) */
+  aspect-ratio: 173 / 183;
+
+  border-radius: 20px;
+  background: rgba(178, 174, 174, 0.10);
+
+  box-sizing: border-box;
+  padding: 12px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.caseCardImage {
+  /* верхняя зона под картинку */
+  flex: 1 1 auto;
+  min-height: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 14px;
+  overflow: hidden;
+}
+
+.caseCardImage img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+.caseCardTitle {
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 1;
+  text-align: center;
+}
+
+.caseCardButton {
+  height: 34px;
+  border-radius: 12px;
+  border: 0;
+
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-size: 12px;
+
+  background: rgba(255, 255, 255, 0.08);
+  color: rgba(255, 255, 255, 0.85);
 }
 
 /* Мобилка: строго 2 колонки */
