@@ -125,10 +125,9 @@ const Cases = () => {
                   <img src={upgradeIcon} />
                   <span>Апгрейды</span>
                 </div>
-                <div className="footerItem active">
+                <div className="footerItem">
                   <img src={casesIcon} />
-                    <span>Кейсы</span>
-                  <img className="footerActiveAnim" src="https://mycs2.pro/public/video/fire_orange.webp?v=3"/>
+                  <span>Кейсы</span>
                 </div>
                 <div className="footerItem">
                   <img src={friendsIcon} />
