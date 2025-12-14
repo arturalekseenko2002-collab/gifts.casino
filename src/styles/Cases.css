@@ -391,7 +391,7 @@ body {
 
   display: flex;
   justify-content: center;
-
+  overflow: visible;
 }
 
 .footerInner{
@@ -401,6 +401,7 @@ body {
 
   background: #0C0B15;
   border-radius: 15px 15px 0px 0px;
+  overflow: visible;
 
   padding: 15px 18px;
   box-sizing: border-box;
@@ -423,6 +424,7 @@ body {
   flex-direction: column;
   align-items: center;
   gap: 6px;
+  position: relative;
 }
 
 .footerItem img {
@@ -437,6 +439,30 @@ body {
   line-height: 1;
   white-space: nowrap;
   font-family: Inter_18pt-Regular;
+}
+
+/* ================= ACTIVE FOOTER ANIMATION ================= */
+
+.footerItem .footerActiveAnim {
+  display: none;
+}
+
+.footerItem.active .footerActiveAnim {
+  display: block;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+
+  /* вылезает вниз как на скрине */
+  bottom: -22px;
+
+  width: clamp(90px, 14vw, 160px);
+  height: clamp(24px, 4vw, 44px);
+
+  object-fit: contain;
+  pointer-events: none;
+  user-select: none;
+  z-index: 10;
 }
 
 @media (max-width: 480px) {
@@ -508,6 +534,11 @@ body {
 
   .footerItem span {
     font-size: 12px;
+  }
+
+  .footerItem.active .footerActiveAnim {
+    bottom: -18px;
+    height: 34px;
   }
 }
 
