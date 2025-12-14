@@ -73,6 +73,28 @@ body {
   align-items: stretch;
 }
 
+/* ================= HIDE SCROLLBAR (KEEP SCROLL) ================= */
+
+/* Chrome / Safari / Telegram WebView */
+.mainHomePageContainer::-webkit-scrollbar {
+  width: 0px;
+  height: 0px;
+}
+
+.mainHomePageContainer::-webkit-scrollbar-thumb {
+  background: transparent;
+}
+
+/* Firefox */
+.mainHomePageContainer {
+  scrollbar-width: none; /* hide scrollbar */
+}
+
+/* Edge / old IE */
+.mainHomePageContainer {
+  -ms-overflow-style: none;
+}
+
 /* ================= HEADER (адаптивный) ================= */
 
 .headerContainer {
