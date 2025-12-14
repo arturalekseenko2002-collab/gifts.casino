@@ -379,25 +379,24 @@ body {
   justify-content: center;
 }
 
-.footerContainer {
+.footerContainer{
   position: fixed;
-  bottom: env(safe-area-inset-top);
-  z-index: 1002;
-
-  width: 100%;
-  min-height: 44px;
-
-  background: #0C0B15;
-  border-radius: 15px 15px 0px 0px;
-
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding-bottom: env(safe-area-inset-bottom);
   display: flex;
-  flex-direction: row;
+  justify-content: center;
+}
+
+.footerInner{
+  width: 100%;
+  max-width: 1300px;   /* как у mainHomePageContainer */
+  padding: 15px 18px;  /* твои паддинги */
+  box-sizing: border-box;
+  display: flex;
   justify-content: space-between;
   align-items: center;
-
-  box-sizing: border-box;
-
-  bottom: 0;
 }
 
 @media (max-width: 480px) {
