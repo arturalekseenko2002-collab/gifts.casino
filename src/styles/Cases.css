@@ -79,6 +79,8 @@ body {
 
   padding: 12px 20px;
   box-sizing: border-box;
+
+  margin-bottom: .5vh;
 }
 
 .CircleAndNickNameContainer {
@@ -350,7 +352,7 @@ body {
   /* ❗️СТРОГО ОДНА СТРОКА */
   .headerContainer {
     flex-wrap: nowrap;
-    padding: 20px 18px;
+    padding: 30px 18px;
   }
 
   .circleInHeaderContainer {
