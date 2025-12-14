@@ -80,7 +80,6 @@ const Cases = () => {
                       открыть за подписку
                     </div>
                   </div>
-                <div>Case: {item.title}</div>
               </div>
             ))}
           </div>
