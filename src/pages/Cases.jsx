@@ -103,7 +103,7 @@ const Cases = () => {
                       <img src={pinkCaseIMG} />
                     </div>
                     <div className="caseCardTitle">
-                      UFC
+                      PEPE
                     </div>
                     <div className="caseCardButton">
                       открыть за подписку
