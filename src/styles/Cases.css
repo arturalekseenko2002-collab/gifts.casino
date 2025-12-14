@@ -243,6 +243,7 @@ body {
 }
 
 .titleAnimationContainer {
+  position: relative;
   width: 90%;
   height: 5%;
   display: flex;
