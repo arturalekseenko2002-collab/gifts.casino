@@ -256,6 +256,25 @@ body {
   font-size: 2vh;
 }
 
+.casesGrid {
+  width: 100%;
+  padding: 16px;
+  box-sizing: border-box;
+
+  display: grid;
+  gap: 14px;
+
+  /* Самое главное: адаптивная сетка */
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+}
+
+/* Мобилка: строго 2 колонки */
+@media (max-width: 480px) {
+  .casesGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
 @font-face {
   font-family: 'Inter_18pt-SemiBold';
   src: url('/public/fonts/Inter_18pt-SemiBold.ttf') format('truetype');

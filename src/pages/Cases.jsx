@@ -57,6 +57,15 @@ const Cases = () => {
             <h2>БЕСПЛАТНЫЕ КЕЙСЫ</h2>
           </div>
 
+          <div className="casesGrid">
+            {items.map((item) => (
+              <div key={item.id} className="casesGridItem">
+                {/* Тут будет твоя карточка */}
+                <div>Case: {item.title}</div>
+              </div>
+            ))}
+          </div>
+
         </div>
       </div>
     </div>
