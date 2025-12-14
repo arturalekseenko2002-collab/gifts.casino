@@ -74,7 +74,7 @@ const Cases = () => {
                       <img src={ufcCaseIMG} />
                     </div>
                     <div className="caseCardTitle">
-                      <h2>UFC</h2>
+                      UFC
                     </div>
                     <div className="caseCardButton">
                       <h2>открыть за подписку</h2>
