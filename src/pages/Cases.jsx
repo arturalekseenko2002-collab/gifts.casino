@@ -122,8 +122,20 @@ const Cases = () => {
                   <span>Лотереи</span>
                 </div>
                 <div className="footerItem">
+                  <img src={upgradeIcon} />
+                  <span>Апгрейды</span>
+                </div>
+                <div className="footerItem">
                   <img src={casesIcon} />
                   <span>Кейсы</span>
+                </div>
+                <div className="footerItem">
+                  <img src={friendsIcon} />
+                  <span>Друзья</span>
+                </div>
+                <div className="footerItem">
+                  <img src={jetGiftsIcon} />
+                  <span>Jet Gifts</span>
                 </div>
               </div>
             </div>
