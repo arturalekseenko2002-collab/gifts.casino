@@ -1,15 +1,15 @@
 /* ✅ Глобальные настройки */
 * {
-    user-select: none;
-    -webkit-tap-highlight-color: transparent;
-  }
-  
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
 body {
   margin: 0;
   width: 100%;
   height: 100vh;
   position: fixed;
-  overflow: hidden; 
+  overflow: hidden;
   isolation: isolate;
 }
 
@@ -23,22 +23,22 @@ body {
   flex-direction: column;
 
   background:
-    radial-gradient(200% 150% at 0% 60%,rgba(85,61,158,.8),transparent 30%),
-    radial-gradient(100% 180% at 80% 80%,#000,#000);
+    radial-gradient(200% 150% at 0% 60%, rgba(85, 61, 158, 0.8), transparent 30%),
+    radial-gradient(100% 180% at 80% 80%, #000, #000);
   background-color: #000;
   background-blend-mode: screen;
   min-height: 0;
 
   color: white;
   font-family: Muller;
-  font-size: 2.2vh ;
+  font-size: 2.2vh;
 }
 
-.App p{
+.App p {
   margin: 0;
 }
 
-.Main_Window{
+.Main_Window {
   width: 100%;
   height: 100%;
   position: fixed;
@@ -57,119 +57,134 @@ body {
   flex-direction: column;
   align-items: center;
 
-  /* 🔹 КЛЮЧЕВОЕ */
+  /* 🔹 КЛЮЧЕВОЕ: ограничиваем контент на больших экранах */
   max-width: 1300px;
   margin: 0 auto;
   box-sizing: border-box;
+
   overflow-y: auto;
 }
 
+/* ================= HEADER (адаптивный) ================= */
+
 .headerContainer {
-  position: relative;    
-  height: 8.37vh;             
+  position: relative;
   width: 100%;
+
+  /* вместо жесткого vh — адаптивная высота */
+  min-height: 72px;
+  height: auto;
+
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  align-items: center;    
-  flex: 0 0 8.37vh;           
-}
+  align-items: center;
 
-.circleInHeaderContainer {
-  position: static;       
-  height: 75%;       
-  width: auto;               
-  margin-left: 3.5vw;                  
+  padding: 12px 0;
+  box-sizing: border-box;
 }
 
 .CircleAndNickNameContainer {
-  position: static;       
-  height: 100%;       
-  width: auto;                              
+  height: 100%;
+  width: auto;
   display: flex;
   flex-direction: row;
-  align-items: center;  
-  gap: 2vw;
+  align-items: center;
+
+  /* пусть блок слева занимает доступное место */
+  flex: 1 1 auto;
+  min-width: 0;
+
+  gap: 12px;
+}
+
+.circleInHeaderContainer {
+  height: clamp(44px, 6vh, 56px);
+  width: auto;
+  margin-left: 0;
 }
 
 .circleName {
-
-  height: 100%;       
-  aspect-ratio: 1/1;         
-  background-color: #5736BB; 
-  border-radius: 20%;  
+  height: 100%;
+  aspect-ratio: 1/1;
+  background-color: #5736bb;
+  border-radius: 20%;
 
   color: white;
-  display: flex; 
+  display: flex;
   align-items: center;
   justify-content: center;
-  font-family: 'Inter', sans-serif;  
-  font-weight: 400;                 
-  font-size: 1.6vh;
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+  font-size: clamp(12px, 1.6vh, 16px);
 }
 
 .userAvatar {
-  height: 100%;    
+  height: 100%;
   aspect-ratio: 1/1;
-  border-radius: 20%; 
+  border-radius: 20%;
 }
 
 .nickNameContainer {
-  position: static;     
-  margin: 0;                  
-  height: 55%;
+  margin: 0;
   width: auto;
-  /* margin-left: 2vw;
-  margin-right: 3vw; */
+
   display: flex;
-  align-content: stretch;
-  /* gap: 0.1vh; */
-  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: center;
+
+  /* чтобы длинные имена не ломали хедер */
+  min-width: 0;
 }
 
 .nickNameContainerPart1 {
   width: 100%;
-  height: 60%;
-
   color: white;
-  font-family: 'Inter', sans-serif;
-  font-weight: 400;  
-  font-size: 1.94vh;
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+  font-size: clamp(14px, 1.9vh, 18px);
   text-align: start;
+
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .nickNameContainerPart2 {
   width: 100%;
-  height: 40%;
-
   color: white;
-  font-family: 'Inter', sans-serif;
-  font-weight: 400;  
-  font-size: 1.47vh;
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+  font-size: clamp(12px, 1.47vh, 15px);
   text-align: start;
+
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .deposit-ton-key-Container {
-  position: static;       
-  height: 100%;       
-  width: 45%;                              
+  height: 100%;
+  width: auto;
   display: flex;
   flex-direction: row;
-  align-items: center;  
-  gap: 2vw;
+  align-items: center;
 
-  margin-right: 2.5vw;
+  flex: 0 0 auto;
+  gap: 12px;
+
+  margin-right: 0;
 }
 
 .tonBalanceContainer {
-  width: 45%;
-  height: 46%;
+  width: clamp(130px, 18vw, 170px);
+  height: 40px;
   background-color: rgba(217, 217, 217, 0.15);
   border-radius: 1vh;
   overflow: hidden;
 
-  box-sizing: border-box; 
-  margin-top: .15vh;
+  box-sizing: border-box;
+  margin-top: 0.15vh;
 
   display: flex;
   align-items: center;
@@ -179,65 +194,65 @@ body {
 
 .tonBalanceContainer h2 {
   color: white;
-  font-family: 'Inter_18pt-SemiBold';
-  font-size: 1.5vh;
-
+  font-family: "Inter_18pt-SemiBold";
+  font-size: 14px;
 }
 
 .tonBalanceContainer img {
   height: 50%;
-  aspect-ratio: auto; 
+  aspect-ratio: auto;
 }
 
 .keyBalanceContainer {
-  width: 22%;
-  height: 46%;
+  width: clamp(70px, 10vw, 90px);
+  height: 40px;
   background-color: rgba(217, 217, 217, 0.15);
   border-radius: 1vh;
   overflow: hidden;
 
-  box-sizing: border-box; 
-  margin-top: .15vh;
+  box-sizing: border-box;
+  margin-top: 0.15vh;
 
   display: flex;
   align-items: center;
   justify-content: center !important;
-  gap: .5vh !important;
+  gap: 0.5vh !important;
 }
 
 .keyBalanceContainer h2 {
   color: white;
-  font-family: 'Inter_18pt-SemiBold';
-  font-size: 1.5vh;
-
+  font-family: "Inter_18pt-SemiBold";
+  font-size: 14px;
 }
 
 .keyBalanceContainer img {
   height: 50%;
-  aspect-ratio: auto; 
+  aspect-ratio: auto;
 }
 
 .depositBalanceContainer {
-  width: 22%;
-  height: 46%;
+  width: 52px;
+  height: 40px;
   background-color: rgba(217, 217, 217, 0.05);
   border-radius: 1vh;
   overflow: hidden;
 
-  border: 0.45px solid #FFFFFF;
-  box-sizing: border-box; 
-  margin-top: .15vh;
+  border: 0.45px solid #ffffff;
+  box-sizing: border-box;
+  margin-top: 0.15vh;
 
   display: flex;
   align-items: center;
   justify-content: center !important;
-  gap: .5vh !important;
+  gap: 0.5vh !important;
 }
 
 .depositBalanceContainer img {
   height: 50%;
-  aspect-ratio: auto; 
+  aspect-ratio: auto;
 }
+
+/* ================= TITLES ================= */
 
 .titleAnimationContainer {
   position: relative;
@@ -251,10 +266,12 @@ body {
 
 .titleAnimationContainer h2 {
   position: absolute;
-  color: #FFFFFF;
-  font-family: 'Inter_18pt-Bold';
+  color: #ffffff;
+  font-family: "Inter_18pt-Bold";
   font-size: 2vh;
 }
+
+/* ================= GRID + CARDS ================= */
 
 .casesGrid {
   width: 100%;
@@ -269,19 +286,17 @@ body {
 }
 
 .casesGridItem {
-  /* чтобы карточка занимала всю ширину ячейки grid */
   width: 100%;
 }
 
-/* ===== Case Card (по параметрам из макета: 173x183, radius 20, fill #B2AEAE 10%) ===== */
 .caseCard {
   width: 100%;
 
-  /* ВАЖНО: сохраняем пропорцию как в макете (W173 / H183) */
+  /* пропорция карточки */
   aspect-ratio: 173 / 183;
 
   border-radius: 20px;
-  background: rgba(178, 174, 174, 0.10);
+  background: rgba(178, 174, 174, 0.1);
 
   box-sizing: border-box;
   padding: 12px;
@@ -293,7 +308,6 @@ body {
 }
 
 .caseCardImage {
-  /* верхняя зона под картинку */
   flex: 1 1 auto;
   min-height: 0;
 
@@ -341,6 +355,41 @@ body {
   .casesGrid {
     grid-template-columns: repeat(2, 1fr);
   }
+
+  .headerContainer {
+    padding: 10px 0;
+    min-height: 64px;
+  }
+
+  .deposit-ton-key-Container {
+    gap: 8px;
+  }
+
+  .tonBalanceContainer,
+  .keyBalanceContainer,
+  .depositBalanceContainer {
+    height: 36px;
+  }
+
+  .tonBalanceContainer {
+    width: clamp(110px, 34vw, 140px);
+  }
+
+  .keyBalanceContainer {
+    width: clamp(62px, 20vw, 80px);
+  }
+
+  .depositBalanceContainer {
+    width: 46px;
+  }
+
+  .nickNameContainerPart1 {
+    font-size: 14px;
+  }
+
+  .nickNameContainerPart2 {
+    font-size: 12px;
+  }
 }
 
 @media (min-width: 900px) {
@@ -353,30 +402,31 @@ body {
   .mainHomePageContainer {
     padding: 0 40px;
   }
+
   .casesGrid {
-    /* На больших экранах: карточки фиксированной ширины, пустые колонки схлопываются */
+    /* На больших экранах: фикс ширина треков, пустые колонки схлопываются */
     grid-template-columns: repeat(auto-fit, 220px);
     justify-content: center;
   }
 }
 
 @font-face {
-  font-family: 'Inter_18pt-SemiBold';
-  src: url('/public/fonts/Inter_18pt-SemiBold.ttf') format('truetype');
+  font-family: "Inter_18pt-SemiBold";
+  src: url("/public/fonts/Inter_18pt-SemiBold.ttf") format("truetype");
   font-weight: normal;
   font-style: normal;
-} 
+}
 
 @font-face {
-  font-family: 'Inter_18pt-Bold';
-  src: url('/public/fonts/Inter_18pt-Bold.ttf') format('truetype');
+  font-family: "Inter_18pt-Bold";
+  src: url("/public/fonts/Inter_18pt-Bold.ttf") format("truetype");
   font-weight: normal;
   font-style: normal;
-} 
+}
 
 @font-face {
-  font-family: 'Inter_18pt-Regular';
-  src: url('/public/fonts/Inter_18pt-Regular.ttf') format('truetype');
+  font-family: "Inter_18pt-Regular";
+  src: url("/public/fonts/Inter_18pt-Regular.ttf") format("truetype");
   font-weight: normal;
   font-style: normal;
-} 
+}
