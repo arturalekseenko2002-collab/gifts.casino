@@ -6,6 +6,7 @@ import { TitleAnimation } from "../components/TitleAnimation";
 import deposit from "../assets/deposit.png";
 import key from "../assets/key.png";
 import ton from "../assets/ton.png";
+import ufcCaseIMG from "../assets/ufcCaseIMG.png";
 
 const Cases = () => {
   const { user, userLoading, initials, displayName, displayUsername } = useUser();
@@ -70,7 +71,7 @@ const Cases = () => {
               <div key={item.id} className="casesGridItem">
                   <div className="caseCard">
                     <div className="caseCardImage">
-                      <img src={ton} />
+                      <img src={ufcCaseIMG} />
                     </div>
                     <div className="caseCardTitle">
                       <h2>UFC</h2>
