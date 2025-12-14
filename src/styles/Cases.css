@@ -383,21 +383,31 @@ body {
   position: fixed;
   left: 0;
   right: 0;
-  bottom: 0;
-  padding-bottom: env(safe-area-inset-bottom);
+  bottom: 0; /* всегда к нижней границе */
+  z-index: 1200;
+
+  /* контейнер без внутренних отступов, иначе футер визуально “поднимается” */
+  padding: 0;
+
   display: flex;
   justify-content: center;
+
+  /* на iPhone не наезжаем на home-indicator */
+  padding-bottom: env(safe-area-inset-bottom);
 }
 
 .footerInner{
   width: 100%;
+  max-width: 1300px; /* как у mainHomePageContainer */
+  margin: 0 auto;
+
   background: #0C0B15;
   border-radius: 15px 15px 0px 0px;
-  max-width: 1300px;   /* как у mainHomePageContainer */
-  padding: 15px 18px; 
+
+  padding: 15px 18px;
   box-sizing: border-box;
+
   display: flex;
-  justify-content: space-between;
   align-items: center;
 }
 
@@ -487,9 +497,17 @@ body {
     max-width: 120px;
   }
 
-  .footerContainer {
-    flex-wrap: nowrap;
-    padding: 30px 18px;
+  .footerInner {
+    padding: 12px 14px;
+  }
+
+  .footerItem img {
+    width: 23px;
+    height: 23px;
+  }
+
+  .footerItem span {
+    font-size: 12px;
   }
 }
 
@@ -499,11 +517,6 @@ body {
   }
 
   .headerContainer {
-    flex-wrap: nowrap;
-    padding: 15px 18px;
-  }
-
-  .footerContainer {
     flex-wrap: nowrap;
     padding: 15px 18px;
   }
@@ -522,12 +535,6 @@ body {
   .casesGrid {
     /* На больших экранах: фикс ширина треков, пустые колонки схлопываются */
     grid-template-columns: repeat(auto-fit, 220px);
-    justify-content: center;
-  }
-
-  .footerContainer {
-    flex-wrap: nowrap;
-    padding: 15px 18px;
     justify-content: center;
   }
 }
@@ -555,4 +562,8 @@ body {
 
 html {
   overscroll-behavior-y: none;
+}
+/* чтобы контент не прятался под футером */
+.mainHomePageContainer {
+  padding-bottom: calc(90px + env(safe-area-inset-bottom));
 }
