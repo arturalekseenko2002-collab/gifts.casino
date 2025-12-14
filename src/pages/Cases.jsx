@@ -70,7 +70,7 @@ const Cases = () => {
               <div key={item.id} className="casesGridItem">
                   <div className="caseCard">
                     <div className="caseCardImage">caseCardTitle
-                      <img src={user.photoUrl} />
+                      <img src={ton} />
                     </div>
                     <div className="caseCardTitle">
                       <h2>UFC</h2>
