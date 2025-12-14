@@ -231,7 +231,7 @@ body {
   border-radius: 1vh;
   overflow: hidden;
 
-  border: 1px solid #ffffff;
+  border: 0.75px solid #ffffff;
   box-sizing: border-box;
   margin-top: 0.15vh;
 
