@@ -282,7 +282,7 @@ body {
 
 .casesGrid {
   width: 100%;
-  padding: 16px 0;
+  padding: 10px 20px 10px 20px;
   box-sizing: border-box;
 
   display: grid;
@@ -365,7 +365,7 @@ body {
   /* ❗️СТРОГО ОДНА СТРОКА */
   .headerContainer {
     flex-wrap: nowrap;
-    padding: calc(env(safe-area-inset-top) + 8px) 12px 6px;
+    padding: 30px 18px;
   }
 
   .circleInHeaderContainer {
