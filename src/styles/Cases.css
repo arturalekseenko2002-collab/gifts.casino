@@ -394,7 +394,7 @@ body {
   background: #0C0B15;
   border-radius: 15px 15px 0px 0px;
   max-width: 1300px;   /* как у mainHomePageContainer */
-  /* padding: 15px 18px;  */
+  padding: 15px 18px; 
   box-sizing: border-box;
   display: flex;
   justify-content: space-between;
