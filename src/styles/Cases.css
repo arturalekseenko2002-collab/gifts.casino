@@ -392,13 +392,41 @@ body {
 .footerInner{
   width: 100%;
   background: #0C0B15;
-  border-radius: 15px 15px 0px 0px ;
+  border-radius: 15px 15px 0px 0px;
   max-width: 1300px;   /* как у mainHomePageContainer */
   padding: 15px 18px;  /* твои паддинги */
   box-sizing: border-box;
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+
+.footerNav {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr); /* 🔥 5 иконок */
+  align-items: center;
+  justify-items: center;
+}
+
+.footerItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+}
+
+.footerItem img {
+  width: 23px;
+  height: 23px;
+  object-fit: contain;
+}
+
+.footerItem span {
+  font-size: 12px;
+  color: rgba(255,255,255,0.7);
+  line-height: 1;
+  white-space: nowrap;
 }
 
 @media (max-width: 480px) {

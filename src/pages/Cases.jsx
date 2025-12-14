@@ -116,8 +116,16 @@ const Cases = () => {
           <div className="footerContainer">
 
             <div className="footerInner">
-              <img src={lotteryIcon} />
-              <img src={casesIcon} />
+              <div className="footerNav">
+                <div className="footerItem">
+                  <img src={lotteryIcon} />
+                  <span>Лотереи</span>
+                </div>
+                <div className="footerItem">
+                  <img src={casesIcon} />
+                  <span>Кейсы</span>
+                </div>
+              </div>
             </div>
 
           </div>
