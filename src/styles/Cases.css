@@ -11,6 +11,7 @@ body {
   position: fixed;
   overflow: hidden;
   isolation: isolate;
+  padding-top: env(safe-area-inset-top);
 }
 
 .App {
@@ -41,7 +42,7 @@ body {
 .Main_Window {
   width: 100%;
   height: 100%;
-  position: fixed;
+  position: relative;
   flex-direction: column;
   bottom: 0;
   color: white;
@@ -63,27 +64,30 @@ body {
   box-sizing: border-box;
 
   overflow-y: auto;
+  padding-top: 8px;
 }
 
 /* ================= HEADER (адаптивный) ================= */
 
 .headerContainer {
-  position: relative;
+  position: sticky;
+  top: env(safe-area-inset-top);
+  z-index: 1002;
+
   width: 100%;
   min-height: 44px;
 
   background: #0C0B15;
-  border-radius:  0px 0px 15px 15px;
+  border-radius: 0px 0px 15px 15px;
 
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
 
-  padding: 12px 20px;
+  /* ⬇️ safe area fix */
+  padding: calc(env(safe-area-inset-top) + 8px) 16px 8px;
   box-sizing: border-box;
-
-  margin-bottom: .5vh;
 }
 
 .CircleAndNickNameContainer {
@@ -355,7 +359,7 @@ body {
   /* ❗️СТРОГО ОДНА СТРОКА */
   .headerContainer {
     flex-wrap: nowrap;
-    padding: 30px 18px;
+    padding: calc(env(safe-area-inset-top) + 8px) 12px 6px;
   }
 
   .circleInHeaderContainer {
