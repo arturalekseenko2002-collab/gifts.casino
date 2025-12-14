@@ -415,6 +415,7 @@ body {
   grid-template-columns: repeat(5, 1fr); /* 🔥 5 иконок */
   align-items: center;
   justify-items: center;
+  margin-bottom: 1.5vh;
 }
 
 .footerItem {
