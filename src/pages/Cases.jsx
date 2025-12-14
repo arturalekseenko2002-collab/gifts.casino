@@ -8,6 +8,11 @@ import key from "../assets/key.png";
 import ton from "../assets/ton.png";
 import ufcCaseIMG from "../assets/ufcCaseIMG.png";
 import pinkCaseIMG from "../assets/pinkCaseIMG.png";
+import friendsIcon from "../assets/friendsIcon.png";
+import lotteryIcon from "../assets/lotteryIcon.png";
+import jetGiftsIcon from "../assets/jetGiftsIcon.png";
+import casesIcon from "../assets/casesIcon.png";
+import upgradeIcon from "../assets/upgradeIcon.png";
 
 
 const Cases = () => {
@@ -111,7 +116,8 @@ const Cases = () => {
           <div className="footerContainer">
 
             <div className="footerInner">
-              
+              <img src={lotteryIcon} />
+              <img src={casesIcon} />
             </div>
 
           </div>
