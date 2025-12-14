@@ -412,7 +412,7 @@ body {
 .footerNav {
   width: 100%;
   display: grid;
-  grid-template-columns: repeat(5, 1fr); /* 🔥 5 иконок */
+  grid-template-columns: repeat(5, 1fr); /* 🔥 5 иконоак */
   align-items: center;
   justify-items: center;
   margin-bottom: 1.5vh;
