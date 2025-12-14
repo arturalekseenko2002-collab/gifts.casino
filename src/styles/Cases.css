@@ -92,7 +92,7 @@ body {
   align-items: center;
 
   /* ⬇️ safe area fix */
-  padding: calc(env(safe-area-inset-top) + 8px) 16px 8px;
+  /* padding: calc(env(safe-area-inset-top) + 8px) 16px 8px; */
   box-sizing: border-box;
 }
 
