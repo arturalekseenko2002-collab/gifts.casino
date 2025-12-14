@@ -77,7 +77,7 @@ const Cases = () => {
                       UFC
                     </div>
                     <div className="caseCardButton">
-                      <h2>открыть за подписку</h2>
+                      открыть за подписку
                     </div>
                   </div>
                 <div>Case: {item.title}</div>
