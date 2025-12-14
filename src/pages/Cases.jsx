@@ -69,7 +69,7 @@ const Cases = () => {
             {items.map((item) => (
               <div key={item.id} className="casesGridItem">
                   <div className="caseCard">
-                    <div className="caseCardImage">caseCardTitle
+                    <div className="caseCardImage">
                       <img src={ton} />
                     </div>
                     <div className="caseCardTitle">
