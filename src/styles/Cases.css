@@ -125,7 +125,7 @@ body {
   flex-direction: row;
   align-items: center;
 
-  /* пусть блок слева занимает доступное место */
+  /* пусть блок слева занимает достпное место */
   flex: 1 1 auto;
   min-width: 0;
 
