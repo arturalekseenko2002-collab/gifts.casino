@@ -350,7 +350,7 @@ body {
   /* ❗️СТРОГО ОДНА СТРОКА */
   .headerContainer {
     flex-wrap: nowrap;
-    padding: 16px 16px;
+    padding: 20px 18px;
   }
 
   .circleInHeaderContainer {
