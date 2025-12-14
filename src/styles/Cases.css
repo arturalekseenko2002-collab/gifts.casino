@@ -72,6 +72,8 @@ body {
   width: 100%;
   min-height: 44px;
 
+  background: #0C0B15;
+
   display: flex;
   flex-direction: row;
   justify-content: space-between;
