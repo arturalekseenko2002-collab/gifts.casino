@@ -108,6 +108,44 @@ const Cases = () => {
             ))}
           </div>
 
+          <div className="footerContainer">
+
+            <div className="CircleAndNickNameContainer">
+              <div className="circleInHeaderContainer">
+                {user?.photoUrl ? (
+                  <img src={user.photoUrl} className="userAvatar" />
+                ) : (
+                  <div className="circleName">
+                    {userLoading ? "" : initials}
+                  </div>
+                )}
+              </div>
+              <div className="nickNameContainer">
+                <div className="nickNameContainerPart1">
+                  {userLoading ? "Загрузка" : displayName}
+                </div>
+                <div className="nickNameContainerPart2">
+                  {userLoading ? "" : displayUsername}
+                </div>
+              </div>
+            </div>
+
+            <div className="deposit-ton-key-Container">
+              <div className="depositBalanceContainer">
+                <img src={deposit}/>
+              </div>
+              <div className="tonBalanceContainer">
+                <img src={ton}/>
+                <h2>0.00</h2> 
+              </div>
+              <div className="keyBalanceContainer">
+                <img src={key}/>
+                <h2>4</h2> 
+              </div>
+            </div>
+
+          </div>
+
         </div>
       </div>
     </div>
