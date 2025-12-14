@@ -160,6 +160,8 @@ body {
   flex-direction: row;
   align-items: center;  
   gap: 2vw;
+
+  margin-right: 3vw;
 }
 
 .tonBalanceContainer {
