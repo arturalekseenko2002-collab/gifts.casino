@@ -352,10 +352,8 @@ body {
     padding: 0 40px;
   }
   .casesGrid {
-    /* 5 колонок фиксированной ширины */
-    grid-template-columns: repeat(5, 220px);
-
-    /* центрируем всю сетку */
+    /* На больших экранах: карточки фиксированной ширины, пустые колонки схлопываются */
+    grid-template-columns: repeat(auto-fit, 220px);
     justify-content: center;
   }
 }
