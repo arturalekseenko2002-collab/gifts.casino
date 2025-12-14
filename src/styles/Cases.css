@@ -354,7 +354,7 @@ body {
   }
 
   .circleInHeaderContainer {
-    height: 32px;
+    height: 36px;
   }
 
   .depositBalanceContainer {
@@ -386,7 +386,7 @@ body {
   .tonBalanceContainer img,
   .keyBalanceContainer img,
   .depositBalanceContainer img {
-    height: 70%;
+    height: 60%;
   }
 
   .nickNameContainerPart1 {
