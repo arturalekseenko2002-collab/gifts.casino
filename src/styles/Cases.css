@@ -313,7 +313,7 @@ body {
 }
 
 .caseCardTitle {
-  font-family: 'Inter', sans-serif;
+  font-family: Inter_18pt-Regular;
   font-weight: 500;
   font-size: 14px;
   line-height: 1;
@@ -350,6 +350,13 @@ body {
 @font-face {
   font-family: 'Inter_18pt-Bold';
   src: url('/public/fonts/Inter_18pt-Bold.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+} 
+
+@font-face {
+  font-family: 'Inter_18pt-Regular';
+  src: url('/public/fonts/Inter_18pt-Regular.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
 } 
