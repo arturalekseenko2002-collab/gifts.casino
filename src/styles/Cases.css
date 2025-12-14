@@ -350,11 +350,11 @@ body {
   /* ❗️СТРОГО ОДНА СТРОКА */
   .headerContainer {
     flex-wrap: nowrap;
-    padding: 12px 14px;
+    padding: 14px 14px;
   }
 
   .circleInHeaderContainer {
-    height: 40px;
+    height: 38px;
   }
 
   .depositBalanceContainer {
