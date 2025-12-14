@@ -52,7 +52,7 @@ const Cases = () => {
               </div>
               <div className="tonBalanceContainer">
                 <img src={ton}/>
-                <h2>192.32</h2> 
+                <h2>0.00</h2> 
               </div>
               <div className="keyBalanceContainer">
                 <img src={key}/>
