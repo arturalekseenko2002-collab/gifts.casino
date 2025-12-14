@@ -258,7 +258,7 @@ body {
 
 .casesGrid {
   width: 100%;
-  padding: 10px;
+  padding: 20px 10px 20px 10px;
   box-sizing: border-box;
 
   display: grid;
