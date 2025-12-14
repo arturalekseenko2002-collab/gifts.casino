@@ -565,5 +565,5 @@ html {
 }
 /* чтобы контент не прятался под футером */
 .mainHomePageContainer {
-  padding-bottom: calc(90px + env(safe-area-inset-bottom));
+  padding-bottom: calc(70px + env(safe-area-inset-bottom));
 }
