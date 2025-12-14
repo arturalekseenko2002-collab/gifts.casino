@@ -245,6 +245,8 @@ body {
   height: 5%;
   display: flex;
   justify-content: center;
+
+  margin-bottom: 1.5vh;
 }
 
 .titleAnimationContainer h2 {
