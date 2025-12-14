@@ -392,8 +392,6 @@ body {
   display: flex;
   justify-content: center;
 
-  /* на iPhone не наезжаем на home-indicator */
-  padding-bottom: env(safe-area-inset-bottom);
 }
 
 .footerInner{
