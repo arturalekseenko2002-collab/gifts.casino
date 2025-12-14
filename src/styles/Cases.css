@@ -401,6 +401,7 @@ body {
 
   background: #0C0B15;
   border-radius: 15px 15px 0px 0px;
+  overflow: visible;
 
   padding: 15px 18px;
   box-sizing: border-box;
@@ -437,6 +438,35 @@ body {
   line-height: 1;
   white-space: nowrap;
   font-family: Inter_18pt-Regular;
+}
+
+/* ================= ACTIVE FOOTER ANIMATION ================= */
+
+.footerItem {
+  position: relative;
+}
+
+.footerItem .footerActiveAnim {
+  display: none;
+}
+
+/* add `active` class on the selected footer item */
+.footerItem.active {
+  padding-bottom: 16px; /* space for the animation */
+}
+
+.footerItem.active .footerActiveAnim {
+  display: block;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 2px;
+
+  width: clamp(44px, 7vw, 72px);
+  height: 14px;
+  object-fit: contain;
+  pointer-events: none;
+  user-select: none;
 }
 
 @media (max-width: 480px) {
@@ -508,6 +538,15 @@ body {
 
   .footerItem span {
     font-size: 12px;
+  }
+
+  .footerItem.active {
+    padding-bottom: 18px;
+  }
+
+  .footerItem.active .footerActiveAnim {
+    height: 12px;
+    bottom: 2px;
   }
 }
 
