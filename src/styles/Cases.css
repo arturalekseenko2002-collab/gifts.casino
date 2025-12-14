@@ -265,7 +265,7 @@ body {
   gap: 10px;
 
   /* Самое главное: адаптивная сетка */
-  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
 }
 
 .casesGridItem {
@@ -278,7 +278,7 @@ body {
   width: 100%;
 
   /* ВАЖНО: сохраняем пропорцию как в макете (W173 / H183) */
-  aspect-ratio: 173 / 183;
+  aspect-ratio: 173 / 163;
 
   border-radius: 20px;
   background: rgba(178, 174, 174, 0.10);
