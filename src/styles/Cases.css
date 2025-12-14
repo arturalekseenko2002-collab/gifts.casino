@@ -447,7 +447,7 @@ body {
   .headerContainer {
     flex-wrap: nowrap;
     padding: 30px 18px;
-    margin-bottom: 1vh;
+    margin-bottom: 1vh!important;
   }
 
   .circleInHeaderContainer {
@@ -497,7 +497,7 @@ body {
   }
 
   .footerInner {
-    padding: 15px 19px 30px 19px;
+    padding: 15px 19px 30px 19px!important;
   }
 
   .footerItem img {
@@ -518,7 +518,7 @@ body {
   .headerContainer {
     flex-wrap: nowrap;
     padding: 15px 18px;
-    margin-bottom: 1vh;
+    margin-bottom: 1vh!important;
   }
 }
 
@@ -530,7 +530,7 @@ body {
   .headerContainer {
     flex-wrap: nowrap;
     padding: 15px 18px;
-    margin-bottom: 1vh;
+    margin-bottom: 1vh!important;
   }
 
   .casesGrid {
