@@ -447,6 +447,7 @@ body {
   .headerContainer {
     flex-wrap: nowrap;
     padding: 30px 18px;
+    margin-bottom: 1vh;
   }
 
   .circleInHeaderContainer {
@@ -517,6 +518,7 @@ body {
   .headerContainer {
     flex-wrap: nowrap;
     padding: 15px 18px;
+    margin-bottom: 1vh;
   }
 }
 
@@ -528,6 +530,7 @@ body {
   .headerContainer {
     flex-wrap: nowrap;
     padding: 15px 18px;
+    margin-bottom: 1vh;
   }
 
   .casesGrid {
