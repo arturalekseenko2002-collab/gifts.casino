@@ -10,6 +10,14 @@ import ton from "../assets/ton.png";
 const Cases = () => {
   const { user, userLoading, initials, displayName, displayUsername } = useUser();
 
+  const items = [
+    { id: 1, title: "UFC" },
+    { id: 2, title: "UFC" },
+    { id: 3, title: "UFC" },
+    { id: 4, title: "UFC" },
+    { id: 5, title: "UFC" },
+  ];
+
   return (
     <div className="App">
       <div className="Main_Window">
