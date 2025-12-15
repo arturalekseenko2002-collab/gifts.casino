@@ -98,7 +98,7 @@ const Cases = () => {
                   <img src={g63IMG} alt="" />
 
                   <div className="caseProgressBadge">
-                    ⚡ 8382 / 10000
+                    ⚡ 8 382/10 000
                   </div>
 
                   <div className="caseNewBadge">NEW</div>
@@ -151,7 +151,7 @@ const Cases = () => {
                   <img src={ufcCaseIMG} alt="" />
 
                   <div className="caseProgressBadge">
-                    ⚡ 782/1500
+                    ⚡ 782/1 500
                   </div>
                 </div>
 
