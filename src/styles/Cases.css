@@ -337,7 +337,7 @@ body {
 }
 
 .caseCardImage {
-  height: 110px;
+  height: 160px;
   min-height: 0;
 
   display: flex;
