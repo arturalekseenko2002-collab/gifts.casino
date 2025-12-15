@@ -151,7 +151,7 @@ const Cases = () => {
                   <img src={ufcCaseIMG} alt="" />
 
                   <div className="caseProgressBadge">
-                    ⚡ 782 / 1500
+                    ⚡ 782/1500
                   </div>
                 </div>
 
