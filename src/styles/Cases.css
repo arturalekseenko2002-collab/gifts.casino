@@ -385,7 +385,7 @@ body {
 .caseCardActionRow {
   height: 34px;
   display: flex;
-  gap: 10px;
+  gap: 5px;
 }
 
 .caseOpenPill {
