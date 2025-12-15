@@ -155,7 +155,7 @@ const Cases = () => {
                   </div>
                 </div>
 
-                <div className="caseCardTitle">CHAMPION</div>
+                <div className="caseCardTitle">UFC</div>
 
                 <div className="caseCardActionRow">
                   <div className="caseOpenPill">открыть за</div>
