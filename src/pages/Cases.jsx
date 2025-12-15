@@ -179,7 +179,7 @@ const Cases = () => {
                   <div className="caseNewBadge">NEW</div>
                 </div>
 
-                <div className="caseCardTitle">G63</div>
+                <div className="caseCardTitle">Чемпион</div>
 
                 <div className="caseCardActionRow">
                   <div className="caseOpenPill">открыть за</div>
@@ -188,7 +188,7 @@ const Cases = () => {
                     <span className="casePriceIconWrap keys">
                       <img src={key} alt="" />
                     </span>
-                    <span className="casePriceValue">10</span>
+                    <span className="casePriceValue">60</span>
                   </div>
                 </div>
               </div>
