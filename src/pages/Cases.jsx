@@ -13,6 +13,8 @@ import lotteryIcon from "../assets/lotteryIcon.png";
 import jetGiftsIcon from "../assets/jetGiftsIcon.png";
 import casesIcon from "../assets/casesIcon.png";
 import upgradeIcon from "../assets/upgradeIcon.png";
+import g63IMG from "../assets/g63IMG.png";
+import championIMG from "../assets/championIMG.png";
 
 
 const Cases = () => {
@@ -73,6 +75,7 @@ const Cases = () => {
           </div>
 
           <div className="casesGrid">
+
             {items.map((item) => (
               <div key={item.id} className="casesGridItem">
                   <div className="caseCard">
@@ -88,6 +91,34 @@ const Cases = () => {
                   </div>
               </div>
             ))}
+
+            <div className="casesGridItem">
+              <div className="caseCard">
+                <div className="caseCardImage">
+                  <img src={g63IMG} alt="" />
+
+                  <div className="caseProgressBadge">
+                    ⚡ 8382 / 10000
+                  </div>
+
+                  <div className="caseNewBadge">NEW</div>
+                </div>
+
+                <div className="caseCardTitle">Чемпион</div>
+
+                <div className="caseCardActionRow">
+                  <div className="caseOpenPill">открыть за</div>
+
+                  <div className="casePrice">
+                    <span className="casePriceIconWrap ton">
+                      <img src={ton} alt="" />
+                    </span>
+                    <span className="casePriceValue">10</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
           </div>
 
           <div className="titleAnimationContainer">
@@ -96,6 +127,7 @@ const Cases = () => {
           </div>
 
           <div className="casesGrid">
+
             {items.map((item) => (
               <div key={item.id} className="casesGridItem">
                   <div className="caseCard">
@@ -111,7 +143,60 @@ const Cases = () => {
                   </div>
               </div>
             ))}
+
+            {/* 2️⃣ Бесплатный кейс — за TON + progress */}
+            <div className="casesGridItem">
+              <div className="caseCard">
+                <div className="caseCardImage">
+                  <img src={ufcCaseIMG} alt="" />
+
+                  <div className="caseProgressBadge">
+                    ⚡ 782 / 1500
+                  </div>
+                </div>
+
+                <div className="caseCardTitle">CHAMPION</div>
+
+                <div className="caseCardActionRow">
+                  <div className="caseOpenPill">открыть за</div>
+
+                  <div className="casePrice">
+                    <span className="casePriceIconWrap ton">
+                      <img src={ton} alt="" />
+                    </span>
+                    <span className="casePriceValue">50</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* 3️⃣ Бесплатный кейс — за ключи + NEW */}
+            <div className="casesGridItem">
+              <div className="caseCard">
+                <div className="caseCardImage">
+                  <img src={championIMG} alt="" />
+
+                  <div className="caseNewBadge">NEW</div>
+                </div>
+
+                <div className="caseCardTitle">G63</div>
+
+                <div className="caseCardActionRow">
+                  <div className="caseOpenPill">открыть за</div>
+
+                  <div className="casePrice">
+                    <span className="casePriceIconWrap keys">
+                      <img src={key} alt="" />
+                    </span>
+                    <span className="casePriceValue">10</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
           </div>
+
+
 
           <div className="footerContainer">
 
