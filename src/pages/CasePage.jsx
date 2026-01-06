@@ -66,8 +66,8 @@ const CasePage = () => {
                         <h2>{id}</h2>
                     </div>
 
-                    <div className="caseCard">
-                        <div className="caseCardImage">
+                    <div className="caseCardOpened">
+                        <div className="caseCardOpenedImage">
                             <img src={g63IMG} alt="" />
                         </div>
                     </div>
