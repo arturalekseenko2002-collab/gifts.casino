@@ -1,0 +1,541 @@
+/* ✅ Глобальные настройки */
+html, body {
+  height: 100%;
+  overflow: hidden; /* запретить скролл документа */
+}
+
+* {
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+body {
+  margin: 0;
+  width: 100%;
+  isolation: isolate;
+  padding-top: env(safe-area-inset-top);
+}
+
+.App {
+  margin: 0;
+  width: 100%;
+  min-height: 100dvh;
+  position: relative;
+  display: flex;
+  text-align: center;
+  flex-direction: column;
+
+  background:
+    radial-gradient(200% 150% at 0% 60%, rgba(85, 61, 158, 0.8), transparent 30%),
+    radial-gradient(100% 180% at 80% 80%, #000, #000);
+  background-color: #000;
+  background-blend-mode: screen;
+  min-height: 0;
+
+  color: white;
+  font-family: Muller;
+  font-size: 2.2vh;
+}
+
+.App p {
+  margin: 0;
+}
+
+.Main_Window {
+  width: 100%;
+  height: 100dvh;
+  position: relative;
+  flex-direction: column;
+  bottom: 0;
+  color: white;
+  z-index: 1001;
+  animation: fade-in 0.3s forwards;
+  overflow: hidden; /* скролл только в контенте */
+  display: flex;
+}
+
+.mainHomePageContainer {
+  width: 100%;
+  max-width: 1300px;
+  margin: 0 auto;
+  box-sizing: border-box;
+
+  /* важное: это единственный скролл-контейнер */
+  height: 100%;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+
+  /* полностью убираем "протягивание" выше хедера */
+  overscroll-behavior-y: none;
+
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+
+/* ================= HIDE SCROLLBAR (KEEP SCROLL) ================= */
+
+/* Chrome / Safari / Telegram WebView */
+.mainHomePageContainer::-webkit-scrollbar {
+  width: 0px;
+  height: 0px;
+}
+
+.mainHomePageContainer::-webkit-scrollbar-thumb {
+  background: transparent;
+}
+
+/* Firefox */
+.mainHomePageContainer {
+  scrollbar-width: none; /* hide scrollbar */
+}
+
+/* Edge / old IE */
+.mainHomePageContainer {
+  -ms-overflow-style: none;
+}
+
+/* ================= HEADER (адаптивный) ================= */
+
+.headerContainer {
+  position: relative;   /* 🔥 КЛЮЧЕВО */
+  top: auto;
+  z-index: 1002;
+
+  width: 100%;
+  min-height: 44px;
+
+  background: #0C0B15;
+  border-radius: 0px 0px 15px 15px;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+
+  /* ⬇️ safe area fix */
+  /* padding: calc(env(safe-area-inset-top) + 8px) 16px 8px; */
+  box-sizing: border-box;
+}
+
+.CircleAndNickNameContainer {
+  height: 100%;
+  width: auto;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+  /* пусть блок слева занимает достпное место */
+  flex: 1 1 auto;
+  min-width: 0;
+
+  gap: 12px;
+}
+
+.circleInHeaderContainer {
+  height: clamp(44px, 6vh, 56px);
+  width: auto;
+  margin-left: 0;
+}
+
+.circleName {
+  height: 100%;
+  aspect-ratio: 1/1;
+  background-color: #5736bb;
+  border-radius: 20%;
+
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+  font-size: clamp(12px, 1.6vh, 16px);
+}
+
+.userAvatar {
+  height: 100%;
+  aspect-ratio: 1/1;
+  border-radius: 20%;
+}
+
+.nickNameContainer {
+  margin: 0;
+  width: auto;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  /* чтобы длинные имена не ломали хедер */
+  min-width: 0;
+}
+
+.nickNameContainerPart1 {
+  width: 100%;
+  color: white;
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+  font-size: clamp(14px, 1.9vh, 18px);
+  text-align: start;
+
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.nickNameContainerPart2 {
+  width: 100%;
+  color: white;
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+  font-size: clamp(12px, 1.47vh, 15px);
+  text-align: start;
+
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.deposit-ton-key-Container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+.tonBalanceContainer {
+  width: clamp(130px, 18vw, 170px);
+  height: 40px;
+  background-color: rgba(217, 217, 217, 0.15);
+  border-radius: 1vh;
+  overflow: hidden;
+
+  box-sizing: border-box;
+  margin-top: 0.15vh;
+
+  display: flex;
+  align-items: center;
+  justify-content: center !important;
+  gap: 1vh !important;
+}
+
+.tonBalanceContainer h2 {
+  color: white;
+  font-family: "Inter_18pt-SemiBold";
+  font-size: 14px;
+}
+
+.tonBalanceContainer img {
+  height: 50%;
+  aspect-ratio: auto;
+}
+
+.keyBalanceContainer {
+  width: clamp(70px, 10vw, 90px);
+  height: 40px;
+  background-color: rgba(217, 217, 217, 0.15);
+  border-radius: 1vh;
+  overflow: hidden;
+
+  box-sizing: border-box;
+  margin-top: 0.15vh;
+
+  display: flex;
+  align-items: center;
+  justify-content: center !important;
+  gap: 0.5vh !important;
+}
+
+.keyBalanceContainer h2 {
+  color: white;
+  font-family: "Inter_18pt-SemiBold";
+  font-size: 14px;
+}
+
+.keyBalanceContainer img {
+  height: 50%;
+  aspect-ratio: auto;
+}
+
+.depositBalanceContainer {
+  width: 52px;
+  height: 40px;
+  background-color: rgba(217, 217, 217, 0.05);
+  border-radius: 1vh;
+  overflow: hidden;
+
+  border: 0.6px solid #ffffff;
+  box-sizing: border-box;
+  margin-top: 0.15vh;
+
+  display: flex;
+  align-items: center;
+  justify-content: center !important;
+  gap: 0.5vh !important;
+}
+
+.depositBalanceContainer img {
+  height: 45%;
+  aspect-ratio: auto;
+}
+
+/* ================= TITLES ================= */
+
+.titleAnimationContainer {
+  position: relative;
+  width: 100%;
+  height: 5%;
+  display: flex;
+  justify-content: center;
+
+  margin-bottom: 1.5vh;
+}
+
+.titleAnimationContainer h2 {
+  position: absolute;
+  color: #ffffff;
+  font-family: "Inter_18pt-Bold";
+  font-size: 2vh;
+}
+
+.footerContainer{
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0; /* всегда к нижней границе */
+  z-index: 1200;
+
+  /* контейнер без внутренних отступов, иначе футер визуально “поднимается” */
+  padding: 0;
+
+  display: flex;
+  justify-content: center;
+  overflow: visible;
+}
+
+.footerInner{
+  width: 100%;
+  max-width: 1300px; /* как у mainHomePageContainer */
+  margin: 0 auto;
+
+  background: #0C0B15;
+  border-radius: 15px 15px 0px 0px;
+  overflow: visible;
+
+  padding: 15px 18px;
+  box-sizing: border-box;
+
+  display: flex;
+  align-items: center;
+}
+
+.footerNav {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr); /* 🔥 5 иконоак */
+  align-items: center;
+  justify-items: center;
+  /* margin-bottom: 1.5vh; */
+}
+
+.footerItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  position: relative;
+}
+
+.footerItem img {
+  width: 23px;
+  height: 23px;
+  object-fit: contain;
+}
+
+.footerItem span {
+  font-size: 12px;
+  color: rgba(255,255,255,0.7);
+  line-height: 1;
+  white-space: nowrap;
+  font-family: Inter_18pt-Regular;
+}
+
+/* ================= ACTIVE FOOTER ANIMATION ================= */
+
+.footerItem .footerActiveAnim {
+  display: none;
+}
+
+.footerItem.active .footerActiveAnim {
+  display: block;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+
+  /* вылезает вниз как на скрине */
+  bottom: -22px;
+
+  width: clamp(90px, 14vw, 160px);
+  height: clamp(24px, 4vw, 44px);
+
+  object-fit: contain;
+  pointer-events: none;
+  user-select: none;
+  z-index: 10;
+}
+
+@media (max-width: 480px) {
+  .casesGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* ❗️СТРОГО ОДНА СТРОКА */
+  .headerContainer {
+    flex-wrap: nowrap;
+    padding: 30px 18px;
+    margin-bottom: 1vh!important;
+  }
+
+  .circleInHeaderContainer {
+    height: 40px;
+  }
+
+  .depositBalanceContainer {
+    width: 35px;
+    height: 27px;
+    border-radius: 6px;
+  }
+
+  .tonBalanceContainer {
+    width: 80px;
+    height: 27px;
+    border-radius: 6px;
+    gap: 6px !important;
+  }
+
+  .keyBalanceContainer {
+    width: 43px;
+    height: 27px;
+    border-radius: 6px;
+    gap: 6px !important;
+  }
+
+  .tonBalanceContainer h2,
+  .keyBalanceContainer h2 {
+    font-size: 12px;
+    line-height: 1;
+  }
+
+  .tonBalanceContainer img,
+  .keyBalanceContainer img,
+  .depositBalanceContainer img {
+    height: 60%;
+  }
+
+  .nickNameContainerPart1 {
+    font-size: 13px;
+    max-width: 120px;
+  }
+
+  .nickNameContainerPart2 {
+    font-size: 11px;
+    max-width: 120px;
+  }
+
+  .footerInner {
+    padding: 15px 19px 30px 19px!important;
+  }
+
+  .footerItem img {
+    width: 23px;
+    height: 23px;
+  }
+
+  .footerItem span {
+    font-size: 12px;
+  }
+
+  .footerItem.active .footerActiveAnim {
+    bottom: -11px;
+    height: 50px;
+  }
+}
+
+@media (min-width: 900px) {
+  .mainHomePageContainer {
+    padding: 0px;
+  }
+
+  .headerContainer {
+    height: 80px;
+    min-height: 80px;
+    padding: 15px 18px;
+    margin-bottom: 1vh!important;
+  }
+
+  .footerItem.active .footerActiveAnim {
+    bottom: -11px;
+    height: 50px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .mainHomePageContainer {
+    padding: 0px;
+  }
+
+  .headerContainer {
+    flex-wrap: nowrap;
+    padding: 15px 18px;
+    margin-bottom: 1vh!important;
+  }
+
+  .casesGrid {
+    /* На больших экранах: фикс ширина треков, пустые колонки схлопываются */
+    grid-template-columns: repeat(auto-fit, 220px);
+    justify-content: center;
+  }
+
+  .footerItem.active .footerActiveAnim {
+    bottom: -11px;
+    height: 50px;
+  }
+}
+
+@font-face {
+  font-family: "Inter_18pt-SemiBold";
+  src: url("/public/fonts/Inter_18pt-SemiBold.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Inter_18pt-Bold";
+  src: url("/public/fonts/Inter_18pt-Bold.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Inter_18pt-Regular";
+  src: url("/public/fonts/Inter_18pt-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Inter_18pt-Medium";
+  src: url("/public/fonts/Inter_18pt-Medium.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+html {
+  overscroll-behavior-y: none;
+}
+/* чтобы контент не прятался под футером */
+.mainHomePageContainer {
+  padding-bottom: 80px;
+}
