@@ -2,6 +2,7 @@ import React from "react";
 import "../styles/Cases.css";
 import { useUser } from "../UserContext";
 import { TitleAnimation } from "../components/TitleAnimation";
+import { useNavigate } from "react-router-dom";
 
 import deposit from "../assets/deposit.png";
 import key from "../assets/key.png";
@@ -26,6 +27,12 @@ const Cases = () => {
     { id: 3, title: "UFC" },
     { id: 4, title: "UFC" },
   ];
+
+  const navigate = useNavigate();
+
+  const openCase = (id) => {
+    navigate(`/case/${id}`);
+  };
 
   return (
     <div className="App">
@@ -77,7 +84,13 @@ const Cases = () => {
           <div className="casesGrid">
 
             {items.map((item) => (
-              <div key={item.id} className="casesGridItem">
+              <div key={item.id} 
+                className="casesGridItem"    
+                  onClick={() => openCase(item.id)}
+                  role="button"
+                  tabIndex={0}
+                  onKeyDown={(e) => (e.key === "Enter" || e.key === " ") && openCase(item.id)}
+                >
                   <div className="caseCard">
                     <div className="caseCardImage">
                       <img src={ufcCaseIMG} />
@@ -92,7 +105,7 @@ const Cases = () => {
               </div>
             ))}
 
-            <div className="casesGridItem">
+            <div className="casesGridItem" onClick={() => openCase("g63")}>
               <div className="caseCard">
                 <div className="caseCardImage">
                   <img src={g63IMG} alt="" />
@@ -104,7 +117,7 @@ const Cases = () => {
                   <div className="caseNewBadge">NEW</div>
                 </div>
 
-                <div className="caseCardTitle">Чемпион</div>
+                <div className="caseCardTitle">G63</div>
 
                 <div className="caseCardActionRow">
                   <div className="caseOpenPill">открыть за</div>
@@ -145,7 +158,7 @@ const Cases = () => {
             ))}
 
             {/* 2️⃣ Бесплатный кейс — за TON + progress */}
-            <div className="casesGridItem">
+            <div className="casesGridItem" onClick={() => openCase("UFC")}>
               <div className="caseCard">
                 <div className="caseCardImage">
                   <img src={ufcCaseIMG} alt="" />
@@ -171,7 +184,7 @@ const Cases = () => {
             </div>
 
             {/* 3️⃣ Бесплатный кйс — за ключи + NEW */}
-            <div className="casesGridItem">
+            <div className="casesGridItem" onClick={() => openCase("Чемпион")}>
               <div className="caseCard">
                 <div className="caseCardImage">
                   <img src={championIMG} alt="" />
