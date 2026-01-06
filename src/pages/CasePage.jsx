@@ -1,8 +1,7 @@
 import React from "react";
-import "../styles/Cases.css";
+import "../styles/CasePage.css";
 import { useUser } from "../UserContext";
 import { TitleAnimation } from "../components/TitleAnimation";
-import { useNavigate } from "react-router-dom";
 import { useParams } from "react-router-dom";
 
 import deposit from "../assets/deposit.png";
@@ -13,6 +12,8 @@ import friendsIcon from "../assets/friendsIcon.png";
 import jetGiftsIcon from "../assets/jetGiftsIcon.png";
 import lotteryIcon from "../assets/lotteryIcon.png";
 import upgradeIcon from "../assets/upgradeIcon.png";
+import React from "react";
+import g63IMG from "../assets/g63IMG.png";
 
 const CasePage = () => {
 
@@ -63,11 +64,13 @@ const CasePage = () => {
 
                     <div className="titleAnimationContainer">
                         <TitleAnimation />
-                        <h2>БЕСПЛАТНЫЕ КЕЙСЫ</h2>
+                        <h2>{id}</h2>
                     </div>
 
-                    <div style={{ color: "white", padding: 20 }}>
-                        Case page: {id}
+                    <div className="caseCard">
+                        <div className="caseCardImage">
+                            <img src={g63IMG} alt="" />
+                        </div>
                     </div>
 
                     <div className="footerContainer">
