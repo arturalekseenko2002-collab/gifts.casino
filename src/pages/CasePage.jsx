@@ -8,14 +8,13 @@ import { useParams } from "react-router-dom";
 import deposit from "../assets/deposit.png";
 import key from "../assets/key.png";
 import ton from "../assets/ton.png";
-import React from "react";
 import casesIcon from "../assets/casesIcon.png";
 import friendsIcon from "../assets/friendsIcon.png";
 import jetGiftsIcon from "../assets/jetGiftsIcon.png";
 import lotteryIcon from "../assets/lotteryIcon.png";
 import upgradeIcon from "../assets/upgradeIcon.png";
 
-export default function CasePage() {
+const CasePage = () => {
 
   const { id } = useParams();
   const { user, userLoading, initials, displayName, displayUsername } = useUser();
@@ -110,4 +109,6 @@ export default function CasePage() {
             </div>
         </div>
     );
-}
+};
+
+export default CasePage;
