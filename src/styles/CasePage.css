@@ -290,7 +290,7 @@ body {
   display: flex;
   justify-content: center;
 
-  margin-bottom: 1.5vh;
+  margin-bottom: 2vh;
 }
 
 .titleAnimationContainer h2 {
@@ -301,7 +301,7 @@ body {
 }
 
 .caseCard {
-  width: 100%;
+  width: 96%;
 
   /* пропорция карточки */
   aspect-ratio: 356 / 183;
@@ -314,12 +314,15 @@ body {
 
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: center;
+  align-items: center;
+  align-self: center;
+
   gap: 10px;
 }
 
 .caseCardImage {
-  height: 200px;
+  height: 180px;
   min-height: 0;
 
   display: flex;
@@ -333,6 +336,52 @@ body {
 }
 
 .caseCardImage img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+.notifActivation {
+  width: 96%;
+
+  /* пропорция карточки */
+  aspect-ratio: 356 / 41;
+
+  border-radius: 20px;
+  background: rgba(178, 174, 174, 0.1);
+
+  box-sizing: border-box;
+  padding: 12px;
+
+  font-family: Inter_18pt-SemiBold;
+  font-size: 14px;
+  color: #FFFFFF;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  align-self: center;
+
+  gap: 10px;
+}
+
+.notifActivationImage {
+  height: 16px;
+  min-height: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 14px;
+  overflow: hidden;
+
+  position: relative;
+}
+
+.notifActivationImage img {
   max-width: 100%;
   max-height: 100%;
   object-fit: contain;

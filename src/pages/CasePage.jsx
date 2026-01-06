@@ -72,6 +72,13 @@ const CasePage = () => {
                         </div>
                     </div>
 
+                    <div className="notifActivation">
+                        <div className="notifActivationImage">
+                            <img src={key} alt="" />
+                        </div>
+                        10 (У вас не хватает 7)
+                    </div>
+
                     <div className="footerContainer">
 
                         <div className="footerInner">
