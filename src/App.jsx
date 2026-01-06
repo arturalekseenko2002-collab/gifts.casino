@@ -1,5 +1,6 @@
 import { Routes, Route } from "react-router-dom";
 import Cases from "./pages/Cases";
+import CasePage from "./pages/CasePage";
 
 
 const App = () => {
