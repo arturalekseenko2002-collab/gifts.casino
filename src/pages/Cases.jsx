@@ -170,7 +170,7 @@ const Cases = () => {
               </div>
             </div>
 
-            {/* 3️⃣ Бесплатный кейс — за ключи + NEW */}
+            {/* 3️⃣ Бесплатный кйс — за ключи + NEW */}
             <div className="casesGridItem">
               <div className="caseCard">
                 <div className="caseCardImage">
