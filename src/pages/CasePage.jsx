@@ -12,7 +12,6 @@ import friendsIcon from "../assets/friendsIcon.png";
 import jetGiftsIcon from "../assets/jetGiftsIcon.png";
 import lotteryIcon from "../assets/lotteryIcon.png";
 import upgradeIcon from "../assets/upgradeIcon.png";
-import React from "react";
 import g63IMG from "../assets/g63IMG.png";
 
 const CasePage = () => {
