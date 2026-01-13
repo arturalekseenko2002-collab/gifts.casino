@@ -73,7 +73,7 @@ const CasePage = () => {
                     </div>
 
                     <div className="notifActivation">
-                        не хватает 7
+                        10 (У вас не хватает 7)
                         <div className="notifActivationImage">
                             <img src={key} alt="" />
                         </div>
