@@ -298,6 +298,7 @@ body {
   color: #ffffff;
   font-family: "Inter_18pt-Bold";
   font-size: 2vh;
+  align-self: center;
 }
 
 .caseCardOpened {
@@ -455,6 +456,8 @@ body {
 }
 
 .demoMode-desktop {
+  position: absolute;
+
   width: 12%;
 
   max-height: 7dvh;
@@ -751,6 +754,7 @@ body {
     flex-wrap: nowrap;
     padding: 15px 18px;
     margin-bottom: 1vh!important;
+    max-height: 44px;
   }
 
   .casesGrid {
