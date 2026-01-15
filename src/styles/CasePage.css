@@ -423,6 +423,8 @@ body {
   background: rgba(74, 74, 74, 1);
   border-radius: 20px;
 
+  padding: 3px;
+
   box-sizing: border-box;
 
 
@@ -439,7 +441,8 @@ body {
   height: 20px;
 
   background: white;
-  aspect-ratio: 1/1;
+  border-radius: 300%;
+
 
   box-sizing: border-box;
 
