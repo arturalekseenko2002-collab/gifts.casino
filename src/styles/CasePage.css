@@ -797,6 +797,10 @@ body {
   .notifActivationImage {
     height: clamp(18px, 1.4vw, 22px);
   }
+
+  .opening-amount-container {
+    font-size: clamp(15px, 1.2vw, 18px);
+  }
 }
 
 @media (min-width: 1200px) {
