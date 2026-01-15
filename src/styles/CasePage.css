@@ -298,6 +298,7 @@ body {
   color: #ffffff;
   font-family: "Inter_18pt-Bold";
   font-size: 2vh;
+  pointer-events: none;
 }
 
 .caseCardOpened {
@@ -451,6 +452,33 @@ body {
 
 
   box-sizing: border-box;
+
+}
+
+.demo-switch-container-desktop {
+  position: absolute;
+
+  right: 16px;   /* или clamp(...) */
+  bottom: 0;     /* или center по высоте */
+  top: 50%;
+  transform: translateY(-50%);
+
+  width: 46px;
+  height: 26px;
+
+  background: rgba(74, 74, 74, 1);
+  border-radius: 20px;
+
+  padding: 3px;
+
+  box-sizing: border-box;
+
+
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  align-self: center;
 
 }
 
