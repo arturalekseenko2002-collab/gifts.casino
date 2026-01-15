@@ -787,7 +787,7 @@ body {
   .caseCardOpenedImage {
     height: auto;      
     flex: 1 1 auto;        
-    max-height: 360px;     
+    max-height: 450px;     
   }
 }
 
