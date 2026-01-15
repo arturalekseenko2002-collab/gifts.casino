@@ -283,7 +283,7 @@ body {
 
 /* ================= TITLES ================= */
 
-.titleAnimationContainer {
+.titleAnimationContainer-CasePage {
   position: relative;
   width: 100%;
   height: 5%;
@@ -293,7 +293,7 @@ body {
   margin-bottom: 2vh !important;
 }
 
-.titleAnimationContainer h2 {
+.titleAnimationContainer-CasePage h2 {
   position: absolute;
   color: #ffffff;
   font-family: "Inter_18pt-Bold";

@@ -62,8 +62,8 @@ const CasePage = () => {
 
                     </div>
 
-                    <div className="titleAnimationContainer">
-                        
+                    <div className="titleAnimationContainer-CasePage">
+
                         <TitleAnimation />
 
                         <div className="backButton-desktop">

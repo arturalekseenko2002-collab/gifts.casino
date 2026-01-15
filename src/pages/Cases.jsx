@@ -76,7 +76,7 @@ const Cases = () => {
 
           </div>
 
-          <div className="titleAnimationContainer">
+          <div className="titleAnimationContainer-cases">
             <TitleAnimation />
             <h2>БЕСПЛАТНЫЕ КЕЙСЫ</h2>
           </div>
@@ -134,7 +134,7 @@ const Cases = () => {
 
           </div>
 
-          <div className="titleAnimationContainer">
+          <div className="titleAnimationContainer-cases">
             <TitleAnimation />
             <h2>ЛИМИТИРОВАННЫЕ КЕЙСЫ</h2>
           </div>
