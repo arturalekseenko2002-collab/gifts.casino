@@ -707,6 +707,14 @@ body {
     bottom: -11px;
     height: 50px;
   }
+
+  .demoMode {
+    display: flex;
+  }
+
+  .demoMode-desktop {
+    display: none;
+  }
 }
 
 @media (min-width: 900px) {
@@ -730,7 +738,7 @@ body {
   }
 
   .demoMode-desktop {
-    display: flex;
+    display: flex!;
   }
 }
 
