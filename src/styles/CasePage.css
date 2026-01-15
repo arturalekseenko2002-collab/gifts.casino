@@ -829,7 +829,7 @@ body {
   .caseCardOpenedImage {
     height: auto;          /* ❗️убираем фикс */
     flex: 1 1 auto;        /* 🔥 занимает свободное место */
-    max-height: 600px;     /* ⛔️ потолок */
+    max-height: 1000px;     /* ⛔️ потолок */
   }
 }
 
