@@ -298,7 +298,6 @@ body {
   color: #ffffff;
   font-family: "Inter_18pt-Bold";
   font-size: 2vh;
-  pointer-events: none;
 }
 
 .caseCardOpened {
@@ -455,16 +454,36 @@ body {
 
 }
 
+.demoMode-desktop {
+  width: 12%;
+
+  max-height: 7dvh;
+
+  /* пропорция карточки */
+  aspect-ratio: 356 / 30;
+
+  border-radius: 13px;
+
+  box-sizing: border-box;
+  /* padding: 12px; */
+
+  font-family: Inter_18pt-Medium;
+  font-size: 14px;
+  color: #FFFFFF;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  align-self: center;
+
+  gap: 7px;
+  right: 22px;
+}
+
 .demo-switch-container-desktop {
-  position: absolute;
-
-  right: 16px;   /* или clamp(...) */
-  bottom: 0;     /* или center по высоте */
-  top: 50%;
-  transform: translateY(-50%);
-
-  width: 46px;
-  height: 26px;
+  width: 42px;
+  height: 22px;
 
   background: rgba(74, 74, 74, 1);
   border-radius: 20px;
@@ -481,6 +500,19 @@ body {
   align-self: center;
 
 }
+
+.demo-switcher-desktop {
+  width: 16px;
+  height: 16px;
+
+  background: white;
+  border-radius: 300%;
+
+
+  box-sizing: border-box;
+
+}
+
 
 .opening-amount-container {
   width: 96%;
@@ -693,6 +725,13 @@ body {
     bottom: -11px;
     height: 50px;
   }
+  .demoMode {
+    display: none;
+  }
+
+  .demoMode-desktop {
+    display: flex;
+  }
 }
 
 @media (min-width: 1200px) {
@@ -715,6 +754,14 @@ body {
   .footerItem.active .footerActiveAnim {
     bottom: -11px;
     height: 50px;
+  }
+
+  .demoMode {
+    display: none;
+  }
+
+  .demoMode-desktop {
+    display: flex;
   }
 }
 

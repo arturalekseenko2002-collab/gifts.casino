@@ -64,10 +64,12 @@ const CasePage = () => {
                     <div className="titleAnimationContainer">
                         <TitleAnimation />
                         <h2>{id}</h2>
-                        
-                        <div className="demo-switch-container-desktop">
-                            <div className="demo-switcher">
+                        <div className="demoMode-desktop">
+                            Демо режим 
+                            <div className="demo-switch-container-desktop">
+                                <div className="demo-switcher-desktop">
 
+                                </div>
                             </div>
                         </div>
                     </div>
