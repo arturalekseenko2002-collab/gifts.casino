@@ -458,7 +458,7 @@ body {
 .demoMode-desktop {
   position: absolute;
 
-  width: 12%;
+  width: 17%;
 
   max-height: 7dvh;
 
@@ -519,7 +519,7 @@ body {
 .backButton-desktop {
   position: absolute;
 
-  width: 12%;
+  width: 17%;
 
   max-height: 7dvh;
 
@@ -829,7 +829,7 @@ body {
   .caseCardOpenedImage {
     height: auto;          /* ❗️убираем фикс */
     flex: 1 1 auto;        /* 🔥 занимает свободное место */
-    max-height: 400px;     /* ⛔️ потолок */
+    max-height: 450px;     /* ⛔️ потолок */
   }
 }
 
