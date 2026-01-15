@@ -56,7 +56,7 @@ body {
 
 .mainHomePageContainer {
   width: 100%;
-  max-width: 1300px;
+  max-width: 1800px;
   margin: 0 auto;
   box-sizing: border-box;
 
@@ -766,6 +766,25 @@ body {
     min-height: 80px;
     padding: 15px 18px;
     margin-bottom: 1vh!important;
+  }
+
+  .casesGrid {
+    /* На больших экранах: фикс ширина треков, пустые колонки схлопываются */
+    grid-template-columns: repeat(auto-fit, 300px);
+    justify-content: center;
+  }
+
+  .caseCardImage {
+    height: 200px;
+  }
+
+  .caseCardTitle {
+    font-size: 18px;
+  }
+
+  .caseCardButton {
+    height: 40px;
+    font-size: 16px;
   }
 
   .footerItem.active .footerActiveAnim {
