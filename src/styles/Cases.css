@@ -290,7 +290,7 @@ body {
   display: flex;
   justify-content: center;
 
-  margin-bottom: .5vh;
+  margin-bottom: .5vh !important;
 }
 
 .titleAnimationContainer h2 {
