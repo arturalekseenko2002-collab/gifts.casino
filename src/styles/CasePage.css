@@ -481,7 +481,7 @@ body {
   align-self: center;
 
   gap: 7px;
-  right: 22px;
+  right: 28px;
 }
 
 .demo-switch-container-desktop {
@@ -521,9 +521,6 @@ body {
   width: 96%;
 
   max-height: 7dvh;
-
-  /* пропорция карточки */
-  aspect-ratio: 356 / 22;
 
   border-radius: 13px;
 
