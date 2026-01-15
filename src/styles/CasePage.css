@@ -290,7 +290,7 @@ body {
   display: flex;
   justify-content: center;
 
-  margin-bottom: 2vh !important;
+  margin-bottom: 2vh;
 }
 
 .titleAnimationContainer-CasePage h2 {
@@ -576,6 +576,44 @@ body {
   margin-top: 1.8vh;
 }
 
+.openCount {
+  width: 96%;
+  height: 48px;
+
+  background: rgba(255, 255, 255, 0.06);
+  border-radius: 24px;
+
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  align-items: center;
+
+  padding: 4px;
+  box-sizing: border-box;
+}
+
+.openCountItem {
+  height: 100%;
+  border: none;
+  background: transparent;
+
+  color: rgba(255,255,255,0.8);
+  font-family: Inter_18pt-Medium;
+  font-size: 14px;
+
+  border-radius: 18px;
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.openCountItem.active {
+  background: rgba(255, 255, 255, 0.08);
+  box-shadow: inset 0 0 0 1px rgba(255,255,255,0.15);
+  color: #fff;
+}
+
 
 
 /* ================= FOOTER (адаптивный) ================= */
@@ -820,6 +858,14 @@ body {
   .opening-amount-container {
     font-size: clamp(15px, 1.2vw, 18px);
   }
+
+  .openCount {
+    height: clamp(46px, 5vh, 60px);
+  }
+
+  .openCountItem {
+    font-size: clamp(14px, 1.2vw, 17px);
+  }
 }
 
 @media (min-width: 1200px) {
@@ -895,6 +941,14 @@ body {
 
   .backButton-desktop {
     display: flex;
+  }
+
+  .openCount {
+    height: clamp(46px, 5vh, 60px);
+  }
+
+  .openCountItem {
+    font-size: clamp(14px, 1.2vw, 17px);
   }
 
   .caseCardOpenedImage {

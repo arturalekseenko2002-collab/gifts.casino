@@ -110,6 +110,14 @@ const CasePage = () => {
                         Сколько кейсов открыть? 
                     </div>
 
+                    <div class="openCount">
+                        <button class="openCountItem">1</button>
+                        <button class="openCountItem active">2</button>
+                        <button class="openCountItem">3</button>
+                        <button class="openCountItem">4</button>
+                        <button class="openCountItem">5</button>
+                    </div>
+
                     <div className="footerContainer">
 
                         <div className="footerInner">
