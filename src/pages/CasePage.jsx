@@ -79,11 +79,9 @@ const CasePage = () => {
                         10 (У вас не хватает 7)
                     </div>
 
-                    <div className="demoMode">demo-switch-container
-                        Демо режим 
-                        <div className="demo-switch-container">
-                            
-                        </div>
+                    <div className="notifActivation">
+                        Демо режим
+                        
                     </div>
 
                     <div className="footerContainer">
