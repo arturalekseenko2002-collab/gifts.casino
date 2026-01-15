@@ -471,7 +471,7 @@ body {
   /* padding: 12px; */
 
   font-family: Inter_18pt-Medium;
-  font-size: 14px;
+  font-size: 16px;
   color: rgba(152, 152, 152, 1);
 
   display: flex;
@@ -481,7 +481,7 @@ body {
   align-self: center;
 
   gap: 7px;
-  right: 28px;
+  right: 30px;
 }
 
 .demo-switch-container-desktop {
@@ -532,7 +532,7 @@ body {
   /* padding: 12px; */
 
   font-family: Inter_18pt-Medium;
-  font-size: 14px;
+  font-size: 16px;
   color: rgba(152, 152, 152, 1);
 
   display: flex;
@@ -542,12 +542,12 @@ body {
   align-self: center;
 
   gap: 7px;
-  left: 28px;
+  left: 30px;
 }
 
 .backButton-desktop img {
-  width: 20px;
-  height: 20px;
+  width: 22px;
+  height: 22px;
 }
 
 
