@@ -118,6 +118,14 @@ const CasePage = () => {
                         <button class="openCountItem">5</button>
                     </div>
 
+                    <div className="openCaseButton">
+                        Открыть кейс
+                        <div className="openCaseButtonImage">
+                            <img src={key} alt="" />
+                        </div>
+                        10
+                    </div>
+
                     <div className="footerContainer">
 
                         <div className="footerInner">
