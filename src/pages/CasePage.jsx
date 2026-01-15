@@ -79,9 +79,17 @@ const CasePage = () => {
                         10 (У вас не хватает 7)
                     </div>
 
-                    <div className="notifActivation">
-                        Демо режим
-                        
+                    <div className="demoMode">
+                        Демо режим 
+                        <div className="demo-switch-container">
+                            <div className="demo-switcher">
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <div className="demoMode">
+                        Сколько кейсов открыть? 
                     </div>
 
                     <div className="footerContainer">
