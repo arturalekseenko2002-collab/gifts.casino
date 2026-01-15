@@ -783,6 +783,12 @@ body {
   .backButton-desktop {
     display: flex;
   }
+
+  .caseCardOpenedImage {
+    height: auto;      
+    flex: 1 1 auto;        
+    max-height: 360px;     
+  }
 }
 
 @media (min-width: 1200px) {
@@ -818,6 +824,12 @@ body {
 
   .backButton-desktop {
     display: flex;
+  }
+
+  .caseCardOpenedImage {
+    height: auto;          /* ❗️убираем фикс */
+    flex: 1 1 auto;        /* 🔥 занимает свободное место */
+    max-height: 360px;     /* ⛔️ потолок */
   }
 }
 
