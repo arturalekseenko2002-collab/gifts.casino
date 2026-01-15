@@ -7,6 +7,7 @@ import { useParams } from "react-router-dom";
 import deposit from "../assets/deposit.png";
 import key from "../assets/key.png";
 import ton from "../assets/ton.png";
+import backButton from "../assets/backButton.png";
 import casesIcon from "../assets/casesIcon.png";
 import friendsIcon from "../assets/friendsIcon.png";
 import jetGiftsIcon from "../assets/jetGiftsIcon.png";
@@ -62,8 +63,16 @@ const CasePage = () => {
                     </div>
 
                     <div className="titleAnimationContainer">
+                        
                         <TitleAnimation />
+
+                        <div className="backButton-desktop">
+                            <img src={backButton} alt="" />
+                            Вернуться 
+                        </div>
+
                         <h2>{id}</h2>
+
                         <div className="demoMode-desktop">
                             Демо режим 
                             <div className="demo-switch-container-desktop">
@@ -72,6 +81,7 @@ const CasePage = () => {
                                 </div>
                             </div>
                         </div>
+
                     </div>
 
                     <div className="caseCardOpened">

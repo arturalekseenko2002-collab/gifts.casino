@@ -304,7 +304,7 @@ body {
 .caseCardOpened {
   width: 96%;
 
-  max-height: 40dvh;
+  max-height: 30dvh;
 
   /* пропорция карточки */
   aspect-ratio: 356 / 183;
@@ -472,7 +472,7 @@ body {
 
   font-family: Inter_18pt-Medium;
   font-size: 14px;
-  color: #FFFFFF;
+  color: rgba(152, 152, 152, 1);
 
   display: flex;
   flex-direction: row;
@@ -514,6 +514,40 @@ body {
 
   box-sizing: border-box;
 
+}
+
+.backButton-desktop {
+  position: absolute;
+
+  width: 12%;
+
+  max-height: 7dvh;
+
+  /* пропорция карточки */
+  aspect-ratio: 356 / 30;
+
+  border-radius: 13px;
+
+  box-sizing: border-box;
+  /* padding: 12px; */
+
+  font-family: Inter_18pt-Medium;
+  font-size: 14px;
+  color: rgba(152, 152, 152, 1);
+
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  align-self: center;
+
+  gap: 7px;
+  left: 28px;
+}
+
+.backButton-desktop img {
+  width: 20px;
+  height: 20px;
 }
 
 
@@ -716,6 +750,10 @@ body {
   .demoMode-desktop {
     display: none;
   }
+
+  .backButton-desktop {
+    display: none;
+  }
 }
 
 @media (min-width: 900px) {
@@ -740,6 +778,10 @@ body {
 
   .demoMode-desktop {
     display: flex!;
+  }
+
+  .backButton-desktop {
+    display: flex;
   }
 }
 
@@ -771,6 +813,10 @@ body {
   }
 
   .demoMode-desktop {
+    display: flex;
+  }
+
+  .backButton-desktop {
     display: flex;
   }
 }
