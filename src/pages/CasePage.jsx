@@ -88,7 +88,7 @@ const CasePage = () => {
                         </div>
                     </div>
 
-                    <div className="demoMode">
+                    <div className="opening-amount-container">
                         Сколько кейсов открыть? 
                     </div>
 
