@@ -853,6 +853,33 @@ body {
     font-size: 16px;
   }
 
+    .caseProgressBadge {
+    font-size: 14px;
+    height: 36px;
+  }
+
+  .caseNewBadge {
+    font-size: 14px;
+    height: 36px;
+  }
+
+  .caseCardActionRow {
+    height: 40px;
+  }       
+
+  .caseOpenPill {
+    font-size: 16px;
+  }   
+
+  .casePriceIconWrap {
+    width: 40px;
+    height: 40px;
+  }
+
+  .casePriceValue {
+    font-size: 18px;
+  }
+
   .footerItem.active .footerActiveAnim {
     bottom: -11px;
     height: 50px;
