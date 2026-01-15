@@ -348,7 +348,7 @@ body {
 .notifActivation {
   width: 96%;
 
-  max-height: 7dvh;
+  max-height: 6dvh;
 
   /* пропорция карточки */
   aspect-ratio: 356 / 41;
