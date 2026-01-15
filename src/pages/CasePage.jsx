@@ -94,7 +94,7 @@ const CasePage = () => {
                         <div className="notifActivationImage">
                             <img src={key} alt="" />
                         </div>
-                        10 (У вас не хватает 7)
+                        10 (У вас не хватает 6)
                     </div>
 
                     <div className="demoMode">
