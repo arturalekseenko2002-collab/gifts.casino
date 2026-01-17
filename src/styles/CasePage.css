@@ -799,6 +799,51 @@ body {
   height: 14px;
 }
 
+.caseCursor {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  height: 100%;
+  width: 0;
+  pointer-events: none;
+  z-index: 10;
+}
+
+.caseCursorLine {
+  position: absolute;
+  top: 20px;
+  bottom: 20px;
+  width: 2px;
+  background: linear-gradient(
+    to bottom,
+    #9d9d9d,
+    #535252,
+    #1d1d1d
+  );
+  left: -1px;
+}
+
+.caseCursorTop {
+  position: absolute;
+  top: 0;
+  left: -14px;
+  width: 28px;
+  height: 14px;
+  background: linear-gradient(to bottom, #d9d9d9, #535252);
+  clip-path: polygon(50% 100%, 0 0, 100% 0);
+}
+
+.caseCursorBottom {
+  position: absolute;
+  bottom: 0;
+  left: -14px;
+  width: 28px;
+  height: 14px;
+  background: linear-gradient(to top, #d9d9d9, #535252);
+  clip-path: polygon(50% 0, 0 100%, 100% 100%);
+}
+
 /* ================= FOOTER (адаптивный) ================= */
 
 .footerContainer{

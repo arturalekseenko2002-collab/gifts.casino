@@ -31,6 +31,28 @@ const CasePage = () => {
   const [isRolling, setIsRolling] = useState(false);
   const [rollOffset, setRollOffset] = useState(0);
 
+    const openCase = () => {
+        if (isRolling) return; // защита от спама
+
+        setIsRolling(true);
+
+        const stage = document.querySelector(".caseStage");
+        const stageWidth = stage?.offsetWidth || window.innerWidth;
+
+        const centerOffset =
+            -(WIN_INDEX * ITEM_WIDTH) +
+            stageWidth / 2 -
+            ITEM_WIDTH / 2;
+
+        // небольшой delay чтобы браузер применил transition
+        requestAnimationFrame(() => {
+            setRollOffset(centerOffset);
+        });
+    };
+
+  const ITEM_WIDTH = 196; 
+  const WIN_INDEX = 15;
+
     const CASE_ITEMS = [
         {
             id: "pepe",
@@ -168,6 +190,12 @@ const CasePage = () => {
 
                     <div className="caseStage">
 
+                        <div className="caseCursor">
+                            <div className="caseCursorTop" />
+                            <div className="caseCursorLine" />
+                            <div className="caseCursorBottom" />
+                        </div>
+
                         <div className={`caseCardOpened ${isRolling ? "hidden" : ""}`}>
                             <div className="caseCardOpenedImage">
                             <img src={g63IMG} alt="" />
@@ -228,11 +256,11 @@ const CasePage = () => {
                         <button class="openCountItem">5</button>
                     </div>
 
-                    <div className="openCaseButton"  onClick={() => setIsRolling(true)}>
+                    <div className="openCaseButton" onClick={openCase}>
                         Открыть кейс
-                        <div className="openCaseButtonImage">
-                            <img src={key} alt="" />
-                        </div>
+                            <div className="openCaseButtonImage">
+                                <img src={key} alt="" />
+                            </div>
                         10
                     </div>
 
