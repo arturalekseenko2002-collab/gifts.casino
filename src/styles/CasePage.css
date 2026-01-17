@@ -700,7 +700,7 @@ body {
   gap: 8px;
 
   will-change: transform;
-  transition: transform 6.5s cubic-bezier(0.1, 0.85, 0.25, 1);
+  transition: transform 10s cubic-bezier(0.1, 0.85, 0.25, 1);
 }
 
 .caseRollTrack.centering {
