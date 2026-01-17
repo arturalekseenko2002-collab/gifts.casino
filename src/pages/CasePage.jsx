@@ -50,8 +50,9 @@ const CasePage = () => {
         });
     };
 
-  const ITEM_WIDTH = 196; 
-  const WIN_INDEX = 15;
+    const ITEM_WIDTH = 196;
+    const ITEMS_COUNT = 80;
+    const WIN_INDEX = Math.floor(ITEMS_COUNT / 2);
 
     const CASE_ITEMS = [
         {
@@ -104,9 +105,9 @@ const CasePage = () => {
         },
     ];
 
-    const items = Array.from({ length: 30 }, () => {
-        return CASE_ITEMS[Math.floor(Math.random() * CASE_ITEMS.length)];
-    });
+    const items = Array.from({ length: ITEMS_COUNT }, () =>
+        CASE_ITEMS[Math.floor(Math.random() * CASE_ITEMS.length)]
+    );
 
     useEffect(() => {
         if (!isRolling) return;
