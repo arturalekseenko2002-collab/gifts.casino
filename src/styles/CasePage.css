@@ -679,6 +679,8 @@ body {
   position: absolute;
   inset: 0;
 
+  overflow: hidden;
+
   display: flex;
   align-items: center;
   justify-content: center;
