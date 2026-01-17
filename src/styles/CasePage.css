@@ -975,6 +975,10 @@ body {
   .backButton-desktop {
     display: none;
   }
+
+  .caseStage {
+    height: 180px; /* 🔽 компактно */
+  }
 }
 
 @media (min-width: 900px) {
