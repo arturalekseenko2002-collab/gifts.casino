@@ -166,44 +166,39 @@ const CasePage = () => {
 
                     </div>
 
-                    {!isRolling && (
-                        <div className="caseCardOpened">
+                    <div className="caseStage">
+
+                        <div className={`caseCardOpened ${isRolling ? "hidden" : ""}`}>
                             <div className="caseCardOpenedImage">
-                                <img src={g63IMG} alt="" />
+                            <img src={g63IMG} alt="" />
                             </div>
                         </div>
-                    )}
 
-
-                    {isRolling && (
-                    <div className="caseRollContainer">
-                        <div
-                        className="caseRollTrack"
-                        style={{ transform: `translateX(${rollOffset}px)` }}>
-                        {items.map((item, index) => (
-
-                        <div className="caseRollItem">
-                            <div className="caseRollImageBox">
-                                <img src={item.image} alt={item.name} />
-                            </div>
-
-                            <div className="caseRollInfo">
-
-                                <div className="caseRollName">
-                                    {item.name}
+                        <div className={`caseRollContainer ${isRolling ? "active" : ""}`}>
+                            <div
+                            className="caseRollTrack"
+                            style={{ transform: `translateX(${rollOffset}px)` }}
+                            >
+                            {items.map((item, index) => (
+                                <div className="caseRollItem" key={index}>
+                                <div className="caseRollImageBox">
+                                    <img src={item.image} alt={item.name} />
                                 </div>
 
-                                <div className="caseRollPrice">
+                                <div className="caseRollInfo">
+                                    <div className="caseRollName">{item.name}</div>
+
+                                    <div className="caseRollPrice">
                                     <img src={ton} alt="" />
                                     {item.price}
+                                    </div>
                                 </div>
+                                </div>
+                            ))}
                             </div>
                         </div>
-                        
-                        ))}
-                        </div>
+
                     </div>
-                    )}
 
                     <div className="notifActivation">
                         <div className="notifActivationImage">
