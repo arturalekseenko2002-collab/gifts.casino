@@ -711,37 +711,33 @@ body {
 }
 
 .caseRollItem {
-  width: 180px;
-  height: 260px;
+  width: clamp(96px, 18vw, 140px);
+  aspect-ratio: 112 / 183;
 
   background: rgba(255, 255, 255, 0.06);
-  border-radius: 22px;
+  border-radius: 18px;
 
   display: flex;
   flex-direction: column;
   align-items: center;
 
-  padding: 16px 12px;
   box-sizing: border-box;
-
-  flex-shrink: 0; /* КРИТИЧЕСКИ ВАЖНО ДЛЯ БАРАБАНА */
 }
 
 .caseRollImageBox {
   width: 100%;
-  height: 140px;
+  height: 32.8%;           /* 60 / 183 */
+
+  margin-top: 10.4%;       /* 19 / 183 */
 
   display: flex;
   align-items: center;
   justify-content: center;
-
-  margin-bottom: 12px;
 }
 
 .caseRollImageBox img {
-  max-width: 100%;
-  max-height: 100%;
-
+  height: 100%;
+  width: auto;
   object-fit: contain;
 }
 
@@ -754,26 +750,34 @@ body {
 }
 
 .caseRollName {
+  margin-top: 9.3%;        /* 17 / 183 */
+
   font-family: Inter_18pt-Regular;
-  font-size: 14px;
+  font-size: clamp(11px, 1.8vw, 13px); /* ≈12.5px в центре */
+  line-height: 1.2;
+  text-align: center;
   color: #fff;
-  /* margin-bottom: 6px; */
+
+  height: calc(1.2em * 2);
+  overflow: hidden;
 }
 
 .caseRollPrice {
-  font-family: Inter_18pt-Bold;
+  margin-top: 16.9%;       /* 31 / 183 */
+
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 6px;
 
-  font-size: 14px;
-  color: #fff;
+  font-family: Inter_18pt-Bold;
+  font-size: clamp(11px, 1.8vw, 13px);
+  white-space: nowrap;
 }
 
 .caseRollPrice img {
-  width: 14px;
-  height: 14px;
+  width: clamp(12px, 2vw, 16px);
+  height: clamp(12px, 2vw, 16px);
 }
 
 /* ================= FOOTER (адаптивный) ================= */
