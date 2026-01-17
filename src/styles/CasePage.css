@@ -703,6 +703,10 @@ body {
   transition: transform 4s cubic-bezier(0.1, 0.85, 0.25, 1);
 }
 
+.caseRollTrack.centering {
+  transition: transform 0.6s ease-out;
+}
+
 .rollItem {
   width: 180px;
   height: 260px;
