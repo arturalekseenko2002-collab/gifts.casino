@@ -58,7 +58,7 @@ const CasePage = () => {
             id: "pepe",
             name: "Plush Pepe Raphael",
             image: pepeImg,
-            price: 11111,
+            price: 11.111,
         },
 
         {
