@@ -14,6 +14,14 @@ import jetGiftsIcon from "../assets/jetGiftsIcon.png";
 import lotteryIcon from "../assets/lotteryIcon.png";
 import upgradeIcon from "../assets/upgradeIcon.png";
 import g63IMG from "../assets/g63IMG.png";
+import pepeImg from "../assets/pepe.png";
+import helmetImg from "../assets/helmet.png";
+import bagImg from "../assets/bag.png";
+import ringImg from "../assets/ring.png";
+import buttonImg from "../assets/button.png";
+import watchImg from "../assets/watch.png";
+import capImg from "../assets/cap.png";
+
 
 const CasePage = () => {
 
@@ -23,12 +31,60 @@ const CasePage = () => {
   const [isRolling, setIsRolling] = useState(false);
   const [rollOffset, setRollOffset] = useState(0);
 
-    const items = Array.from({ length: 30 }, (_, i) => ({
-        id: i,
-        name: `Item ${i}`,
-        image: g63IMG, // временно одно изображение
-        price: 100 + i,
-    }));
+    const CASE_ITEMS = [
+        {
+            id: "pepe",
+            name: "Plush Pepe Raphael",
+            image: pepeImg,
+            price: 11111,
+        },
+
+        {
+            id: "helmet",
+            name: "Neeko Helmet Turbo Frog",
+            image: helmetImg,
+            price: 165,
+        },
+        
+        {
+            id: "bag",
+            name: "Swag Bag Darkness",
+            image: bagImg,
+            price: 6.25,
+        },
+
+        {
+            id: "cap",
+            name: "Durov's Cap Chicago Bulls",
+            image: capImg,
+            price: 998,
+        },
+
+        {
+            id: "watch",
+            name: "Swiss Watch Amazon",
+            image: watchImg,
+            price: 100,
+        },
+
+        {
+            id: "button",
+            name: "Input Key Bitcoin",
+            image: buttonImg,
+            price: 8,
+        },
+
+        {
+            id: "ring",
+            name: "Signet Ring TON",
+            image: ringImg,
+            price: 60,
+        },
+    ];
+
+    const items = Array.from({ length: 30 }, () => {
+        return CASE_ITEMS[Math.floor(Math.random() * CASE_ITEMS.length)];
+    });
 
     useEffect(() => {
         if (!isRolling) return;
@@ -124,13 +180,23 @@ const CasePage = () => {
                         <div
                         className="caseRollTrack"
                         style={{ transform: `translateX(${rollOffset}px)` }}>
-                            {items.map((item, i) => (
-                                <div className="rollItem" key={item.id}>
-                                    <img src={item.image} alt="" />
-                                    <div className="rollItemTitle">{item.name}</div>
-                                    <div className="rollItemPrice">{item.price}</div>
+                        {items.map((item, index) => (
+
+                            <div className="caseRollItem" key={index}>
+
+                                <img src={item.image} alt={item.name} />
+
+                                <div className="caseRollName">
+                                    {item.name}
                                 </div>
-                            ))}
+
+                                <div className="caseRollPrice">
+                                    <img src={ton} alt="" />
+                                    {item.price}
+                                </div>
+
+                            </div>
+                        ))}
                         </div>
                     </div>
                     )}
