@@ -1,11 +1,4 @@
-// src/UserContext.jsx
-import React, {
-  createContext,
-  useContext,
-  useEffect,
-  useMemo,
-  useState,
-} from "react";
+import { createContext, useContext, useEffect, useState } from "react";
 
 const UserContext = createContext(null);
 
@@ -14,58 +7,43 @@ export const UserProvider = ({ children }) => {
   const [userLoading, setUserLoading] = useState(true);
 
   useEffect(() => {
-    const tg = window.Telegram?.WebApp;
-    const tgUser = tg?.initDataUnsafe?.user;
+    // ❗️ ВСЯ работа с Telegram ТОЛЬКО здесь
+    if (typeof window !== "undefined" && window.Telegram?.WebApp) {
+      const tg = window.Telegram.WebApp;
 
-    // если мини-апп открыт не из телеги
-    if (!tgUser) {
-      setUserLoading(false);
-      return;
+      tg.ready();
+
+      if (tg.initDataUnsafe?.user) {
+        setUser(tg.initDataUnsafe.user);
+      } else {
+        setUser(null);
+      }
+    } else {
+      // Браузер / reload / не Telegram
+      setUser(null);
     }
 
-    const body = {
-      telegramId: tgUser.id,
-      username: tgUser.username,
-      firstName: tgUser.first_name,
-      lastName: tgUser.last_name,
-      photoUrl: tgUser.photo_url, // <-- важно!
-      ref: tg?.initDataUnsafe?.start_param || null,
-    };
-
-    // URL бэка, можешь вынести в .env как VITE_API_URL
-    fetch(import.meta.env.VITE_API_URL + "/register-user", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(body),
-    })
-      .then((r) => r.json())
-      .then((data) => {
-        if (data?.ok) {
-          setUser(data.user);
-        } else {
-          console.error("register-user failed", data);
-        }
-      })
-      .catch((e) => console.error("register-user error", e))
-      .finally(() => setUserLoading(false));
+    setUserLoading(false);
   }, []);
 
-  const initials = useMemo(() => {
-    if (!user) return "";
-    const f = user.firstName?.[0] || "";
-    const l = user.lastName?.[0] || "";
-    const fromName = (f + l).trim();
-    if (fromName) return fromName.toUpperCase();
-    if (user.username) return user.username[0].toUpperCase();
-    return "";
-  }, [user]);
+  const initials = user?.first_name
+    ? user.first_name[0].toUpperCase()
+    : "";
 
-  const displayName = user?.firstName || user?.username || "Гость";
-  const displayUsername = user?.username ? "@" + user.username : "";
+  const displayName = user?.first_name || "Гость";
+  const displayUsername = user?.username
+    ? `@${user.username}`
+    : "";
 
   return (
     <UserContext.Provider
-      value={{ user, userLoading, initials, displayName, displayUsername }}
+      value={{
+        user,
+        userLoading,
+        initials,
+        displayName,
+        displayUsername,
+      }}
     >
       {children}
     </UserContext.Provider>
