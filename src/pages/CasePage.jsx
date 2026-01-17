@@ -1,4 +1,4 @@
-import React from "react";
+import { useState, useEffect, useRef } from "react";
 import "../styles/CasePage.css";
 import { useUser } from "../UserContext";
 import { TitleAnimation } from "../components/TitleAnimation";
