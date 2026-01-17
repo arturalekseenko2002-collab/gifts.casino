@@ -191,7 +191,7 @@ const CasePage = () => {
                                 </div>
 
                                 <div className="caseRollPrice">
-                                    <img src={ton} alt="" />
+                                    {/* <img src={ton} alt="" /> */}
                                     {item.price}
                                 </div>
 
