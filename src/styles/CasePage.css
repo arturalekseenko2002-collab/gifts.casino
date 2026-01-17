@@ -772,8 +772,8 @@ body {
   line-height: 1.25;
 
   /* 🔒 фиксированная высота под 3 строки */
-  max-height: calc(1.25em * 3);
-  min-height: calc(1.25em * 3);
+  max-height: calc(1.25em * 2);
+  min-height: calc(1.25em * 2);
 
   overflow: hidden;
   text-align: center;
@@ -977,15 +977,19 @@ body {
   }
 
   .caseStage {
-    height: 220px; /* 🔽 компактно */
+    height: 230px; /* 🔽 компактно */
+    max-height: 30dvh;
   }
 
   .caseRollItem {
-    height: 190px;
+    height: 230px;
+    max-height: 28dvh;
   }
 
   .caseRollImageBox {
     height: 85px;
+    max-height: 10dvh;
+    margin-bottom: 3dvh;
   }
 }
 
