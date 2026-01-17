@@ -30,51 +30,29 @@ const CasePage = () => {
 
   const [isRolling, setIsRolling] = useState(false);
   const [rollOffset, setRollOffset] = useState(0);
-  const [phase, setPhase] = useState('idle');
 
     const openCase = () => {
-        if (isRolling) return;
+        if (isRolling) return; // защита от спама
 
         setIsRolling(true);
 
-        const stage = document.querySelector('.caseStage');
-        const stageWidth = stage.offsetWidth;
+        const stage = document.querySelector(".caseStage");
+        const stageWidth = stage?.offsetWidth || window.innerWidth;
 
-        const winIndex = 15; // ❗ потом будет с сервера
+        const centerOffset =
+            -(WIN_INDEX * ITEM_WIDTH) +
+            stageWidth / 2 -
+            ITEM_WIDTH / 2;
 
-        // ❌ намеренно НЕ по центру
-        const roughOffset =
-            -winIndex * FULL_ITEM_WIDTH +
-            Math.random() * FULL_ITEM_WIDTH * 0.7;
-
-        setPhase('rolling');
-        setRollOffset(roughOffset);
-
-        // после основной прокрутки → центрируем
-        setTimeout(() => {
-            centerWinningItem(winIndex);
-        }, 4000); // совпадает с CSS transition
-    };
-
-    const centerWinningItem = (winIndex) => {
-        const stage = document.querySelector('.caseStage');
-        const stageWidth = stage.offsetWidth;
-
-        const cursorX = stageWidth / 2;
-        const itemCenterX =
-            winIndex * FULL_ITEM_WIDTH + ITEM_WIDTH / 2;
-
-        const centeredOffset = cursorX - itemCenterX;
-
-        setPhase('centering');
-        setRollOffset(centeredOffset);
+        // небольшой delay чтобы браузер применил transition
+        requestAnimationFrame(() => {
+            setRollOffset(centerOffset);
+        });
     };
 
     const ITEM_WIDTH = 196;
     const ITEMS_COUNT = 80;
-
-    const ITEM_GAP = 16;
-    const FULL_ITEM_WIDTH = ITEM_WIDTH + ITEM_GAP;
+    const WIN_INDEX = Math.floor(ITEMS_COUNT / 2);
 
     const CASE_ITEMS = [
         {
@@ -229,8 +207,8 @@ const CasePage = () => {
 
                         <div className={`caseRollContainer ${isRolling ? "active" : ""}`}>
                             <div
-                                className={`caseRollTrack ${phase === 'centering' ? 'centering' : ''}`}
-                                style={{ transform: `translateX(${rollOffset}px)` }}
+                            className="caseRollTrack"
+                            style={{ transform: `translateX(${rollOffset}px)` }}
                             >
                             {items.map((item, index) => (
                                 <div className="caseRollItem" key={index}>
