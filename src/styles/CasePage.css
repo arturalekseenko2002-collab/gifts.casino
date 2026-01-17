@@ -987,8 +987,8 @@ body {
   }
 
   .caseRollImageBox {
-    height: 85px;
-    max-height: 10dvh;
+    height: 100px;
+    max-height: 12dvh;
     margin-bottom: 3dvh;
   }
 }
