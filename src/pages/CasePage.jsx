@@ -20,6 +20,25 @@ const CasePage = () => {
   const { id } = useParams();
   const { user, userLoading, initials, displayName, displayUsername } = useUser();
 
+  const [isRolling, setIsRolling] = useState(false);
+  const [rollOffset, setRollOffset] = useState(0);
+
+    useEffect(() => {
+        if (!isRolling) return;
+
+        const itemWidth = 196; // 180 + gap
+        const winIndex = 15;   // условно
+
+        const centerOffset = 
+            -(winIndex * itemWidth) +
+            window.innerWidth / 2 -
+            itemWidth / 2;
+
+        setTimeout(() => {
+            setRollOffset(centerOffset);
+        }, 50);
+    }, [isRolling]);
+
     return (
         <div className="App">
             <div className="Main_Window">
@@ -84,11 +103,29 @@ const CasePage = () => {
 
                     </div>
 
-                    <div className="caseCardOpened">
-                        <div className="caseCardOpenedImage">
-                            <img src={g63IMG} alt="" />
+                    {!isRolling && (
+                        <div className="caseCardOpened">
+                            <div className="caseCardOpenedImage">
+                                <img src={g63IMG} alt="" />
+                            </div>
+                        </div>
+                    )}
+
+
+                    {isRolling && (
+                    <div className="caseRollContainer">
+                        <div
+                        className="caseRollTrack"
+                        style={{ transform: `translateX(${rollOffset}px)` }}
+                        >
+                        {items.map((item, i) => (
+                            <div className="rollItem" key={i}>
+                            {/* карточка подарка */}
+                            </div>
+                        ))}
                         </div>
                     </div>
+                    )}
 
                     <div className="notifActivation">
                         <div className="notifActivationImage">
@@ -118,7 +155,7 @@ const CasePage = () => {
                         <button class="openCountItem">5</button>
                     </div>
 
-                    <div className="openCaseButton">
+                    <div className="openCaseButton"  onClick={() => setIsRolling(true)}>
                         Открыть кейс
                         <div className="openCaseButtonImage">
                             <img src={key} alt="" />
