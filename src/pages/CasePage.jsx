@@ -190,11 +190,13 @@ const CasePage = () => {
 
                     <div className="caseStage">
 
+                        {isRolling && (
                         <div className="caseCursor">
                             <div className="caseCursorTop" />
                             <div className="caseCursorLine" />
                             <div className="caseCursorBottom" />
                         </div>
+                        )}
 
                         <div className={`caseCardOpened ${isRolling ? "hidden" : ""}`}>
                             <div className="caseCardOpenedImage">
