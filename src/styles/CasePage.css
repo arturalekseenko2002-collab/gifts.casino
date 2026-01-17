@@ -710,6 +710,61 @@ body {
     0 0 30px rgba(58,167,255,0.6);
 }
 
+.caseRollItem {
+  width: 180px;
+  height: 260px;
+
+  background: rgba(255, 255, 255, 0.06);
+  border-radius: 22px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  padding: 16px 12px;
+  box-sizing: border-box;
+
+  flex-shrink: 0; /* КРИТИЧЕСКИ ВАЖНО ДЛЯ БАРАБАНА */
+}
+
+.caseRollImageBox {
+  width: 100%;
+  height: 140px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin-bottom: 12px;
+}
+
+.caseRollImageBox img {
+  max-width: 100%;
+  max-height: 100%;
+
+  object-fit: contain;
+}
+
+.caseRollInfo {
+  text-align: center;
+}
+
+.caseRollName {
+  font-size: 14px;
+  color: #fff;
+  margin-bottom: 6px;
+}
+
+.caseRollPrice {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+
+  font-size: 14px;
+  color: #fff;
+}
+
 /* ================= FOOTER (адаптивный) ================= */
 
 .footerContainer{

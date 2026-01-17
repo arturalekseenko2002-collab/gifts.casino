@@ -182,20 +182,24 @@ const CasePage = () => {
                         style={{ transform: `translateX(${rollOffset}px)` }}>
                         {items.map((item, index) => (
 
-                            <div className="caseRollItem" key={index}>
-
+                        <div className="caseRollItem">
+                            <div className="caseRollImageBox">
                                 <img src={item.image} alt={item.name} />
+                            </div>
+
+                            <div className="caseRollInfo">
 
                                 <div className="caseRollName">
                                     {item.name}
                                 </div>
 
                                 <div className="caseRollPrice">
-                                    {/* <img src={ton} alt="" /> */}
+                                    <img src={ton} alt="" />
                                     {item.price}
                                 </div>
-
                             </div>
+                        </div>
+                        
                         ))}
                         </div>
                     </div>
