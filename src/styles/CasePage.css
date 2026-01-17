@@ -747,15 +747,21 @@ body {
 
 .caseRollInfo {
   text-align: center;
+
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
 
 .caseRollName {
+  font-family: Inter_18pt-Regular;
   font-size: 14px;
   color: #fff;
-  margin-bottom: 6px;
+  /* margin-bottom: 6px; */
 }
 
 .caseRollPrice {
+  font-family: Inter_18pt-Bold;
   display: flex;
   align-items: center;
   justify-content: center;
