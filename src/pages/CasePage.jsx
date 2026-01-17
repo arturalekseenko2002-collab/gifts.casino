@@ -30,24 +30,49 @@ const CasePage = () => {
 
   const [isRolling, setIsRolling] = useState(false);
   const [rollOffset, setRollOffset] = useState(0);
+  const [isWinShown, setIsWinShown] = useState(false);
+  const [winItem, setWinItem] = useState(null);
 
     const openCase = () => {
-        if (isRolling) return; // защита от спама
+        if (isRolling) return;
 
         setIsRolling(true);
+        setIsWinShown(false);
+        setWinItem(null);
 
         const stage = document.querySelector(".caseStage");
         const stageWidth = stage?.offsetWidth || window.innerWidth;
+
+        const baseOffset = -WIN_INDEX * ITEM_WIDTH;
+        const randomShift = Math.random() * ITEM_WIDTH * 0.6; // ❗ НЕ по центру
+
+        setRollOffset(baseOffset - randomShift);
+
+        // после основной прокрутки — центрирование
+        setTimeout(() => {
+            centerWinningItem(stageWidth);
+        }, 8500); // время основной анимации
+    };
+
+    const centerWinningItem = (stageWidth) => {
+        setIsSettling(true);
 
         const centerOffset =
             -(WIN_INDEX * ITEM_WIDTH) +
             stageWidth / 2 -
             ITEM_WIDTH / 2;
 
-        // небольшой delay чтобы браузер применил transition
-        requestAnimationFrame(() => {
-            setRollOffset(centerOffset);
-        });
+        setRollOffset(centerOffset);
+
+        setTimeout(() => {
+            setIsSettling(false);
+            showWin();
+        }, 700); // короткая докрутка
+    };
+
+    const showWin = () => {
+        setIsWinShown(true);
+        setWinItem(items[WIN_INDEX]);
     };
 
     const ITEM_WIDTH = 196;
@@ -105,9 +130,17 @@ const CasePage = () => {
         },
     ];
 
-    const items = Array.from({ length: ITEMS_COUNT }, () =>
-        CASE_ITEMS[Math.floor(Math.random() * CASE_ITEMS.length)]
-    );
+    const itemsRef = useRef([]);
+
+    useEffect(() => {
+        if (itemsRef.current.length === 0) {
+            itemsRef.current = Array.from({ length: ITEMS_COUNT }, () =>
+            CASE_ITEMS[Math.floor(Math.random() * CASE_ITEMS.length)]
+            );
+        }
+    }, []);
+
+    const items = itemsRef.current;
 
     useEffect(() => {
         if (!isRolling) return;
@@ -205,29 +238,36 @@ const CasePage = () => {
                             </div>
                         </div>
 
-                        <div className={`caseRollContainer ${isRolling ? "active" : ""}`}>
-                            <div
-                            className="caseRollTrack"
-                            style={{ transform: `translateX(${rollOffset}px)` }}
-                            >
-                            {items.map((item, index) => (
-                                <div className="caseRollItem" key={index}>
-                                <div className="caseRollImageBox">
-                                    <img src={item.image} alt={item.name} />
-                                </div>
-
-                                <div className="caseRollInfo">
-                                    <div className="caseRollName">{item.name}</div>
-
-                                    <div className="caseRollPrice">
-                                    <img src={ton} alt="" />
-                                    {item.price}
+                        {isRolling && (
+                            <div className={`caseRollContainer ${isWinShown ? "blurred" : ""}`}>
+                                <div
+                                    className="caseRollTrack"
+                                    style={{ transform: `translateX(${rollOffset}px)` }}
+                                >
+                                {items.map((item, index) => (
+                                    <div className="caseRollItem" key={index}>
+                                    <div className="caseRollImageBox">
+                                        <img src={item.image} alt={item.name} />
                                     </div>
-                                </div>
-                                </div>
-                            ))}
+
+                                    <div className="caseRollInfo">
+                                        <div className="caseRollName">{item.name}</div>
+
+                                        <div className="caseRollPrice">
+                                        <img src={ton} alt="" />
+                                        {item.price}
+                                        </div>
+                                    </div>
+                                    </div>
+                                ))}
                             </div>
                         </div>
+                        )}
+
+                        {/* Оверлей выигрыша */}
+                        {isWinShown && winItem && (
+                            <WinOverlay item={winItem} />
+                        )}
 
                     </div>
 

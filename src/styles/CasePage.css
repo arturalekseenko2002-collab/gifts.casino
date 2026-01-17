@@ -676,7 +676,7 @@ body {
 }
 
 .caseRollContainer {
-  position: absolute;
+  position: relative;
   inset: 0;
 
   overflow: hidden;
@@ -695,6 +695,21 @@ body {
   pointer-events: auto;
 }
 
+.caseRollContainer.blurred {
+  filter: blur(8px);
+  opacity: 0.35;
+  transition: 0.4s ease;
+}
+
+.winOverlay {
+  position: absolute;
+  inset: 0;
+  z-index: 50;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .caseRollTrack {
   display: flex;
   gap: 8px;
@@ -705,6 +720,12 @@ body {
 
 .caseRollTrack.centering {
   transition: transform 0.6s ease-out;
+}
+
+.caseRollContainer.blurred {
+  filter: blur(8px);
+  opacity: 0.35;
+  transition: filter 0.4s ease, opacity 0.4s ease;
 }
 
 .rollItem {
