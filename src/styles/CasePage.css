@@ -765,6 +765,11 @@ body {
   color: #fff;
 }
 
+.caseRollPrice img {
+  width: 14px;
+  height: 14px;
+}
+
 /* ================= FOOTER (адаптивный) ================= */
 
 .footerContainer{
