@@ -678,7 +678,7 @@ body {
   align-items: center;
   justify-content: center;
 
-  margin-top: 2vh;
+  /* margin-top: 2vh; */
 }
 
 .caseRollTrack {
@@ -750,17 +750,26 @@ body {
 
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  flex: 1;
 }
 
 .caseRollName {
   font-family: Inter_18pt-Regular;
   font-size: 14px;
   color: #fff;
-  /* margin-bottom: 6px; */
+  line-height: 1.25;
+
+  /* 🔒 фиксированная высота под 3 строки */
+  max-height: calc(1.25em * 3);
+  min-height: calc(1.25em * 3);
+
+  overflow: hidden;
+  text-align: center;
 }
 
 .caseRollPrice {
+  margin-top: auto; /* 🔥 КЛЮЧЕВАЯ СТРОКА */
+
   font-family: Inter_18pt-Bold;
   display: flex;
   align-items: center;
@@ -769,6 +778,8 @@ body {
 
   font-size: 14px;
   color: #fff;
+
+  white-space: nowrap;
 }
 
 .caseRollPrice img {
