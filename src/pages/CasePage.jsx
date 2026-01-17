@@ -23,6 +23,13 @@ const CasePage = () => {
   const [isRolling, setIsRolling] = useState(false);
   const [rollOffset, setRollOffset] = useState(0);
 
+    const items = Array.from({ length: 30 }, (_, i) => ({
+        id: i,
+        name: `Item ${i}`,
+        image: g63IMG, // временно одно изображение
+        price: 100 + i,
+    }));
+
     useEffect(() => {
         if (!isRolling) return;
 
@@ -116,13 +123,14 @@ const CasePage = () => {
                     <div className="caseRollContainer">
                         <div
                         className="caseRollTrack"
-                        style={{ transform: `translateX(${rollOffset}px)` }}
-                        >
-                        {items.map((item, i) => (
-                            <div className="rollItem" key={i}>
-                            {/* карточка подарка */}
-                            </div>
-                        ))}
+                        style={{ transform: `translateX(${rollOffset}px)` }}>
+                            {items.map((item, i) => (
+                                <div className="rollItem" key={item.id}>
+                                    <img src={item.image} alt="" />
+                                    <div className="rollItemTitle">{item.name}</div>
+                                    <div className="rollItemPrice">{item.price}</div>
+                                </div>
+                            ))}
                         </div>
                     </div>
                     )}
