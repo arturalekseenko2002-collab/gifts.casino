@@ -28,6 +28,10 @@ const CasePage = () => {
   const { id } = useParams();
   const { user, userLoading, initials, displayName, displayUsername } = useUser();
 
+    if (userLoading) {
+        return null; // или loader
+    }
+
   const [isRolling, setIsRolling] = useState(false);
   const [rollOffset, setRollOffset] = useState(0);
 
