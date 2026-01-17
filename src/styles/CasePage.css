@@ -977,7 +977,11 @@ body {
   }
 
   .caseStage {
-    height: 180px; /* 🔽 компактно */
+    height: 200px; /* 🔽 компактно */
+  }
+
+  .caseRollItem {
+    height: 170px;
   }
 }
 
